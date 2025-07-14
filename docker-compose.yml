@@ -1,0 +1,14 @@
+services:
+  react-app:
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      # Bind mount for hot reload
+      - .:/app
+      # Anonymous volume for node_modules (prevents host conflicts)
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true

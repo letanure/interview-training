@@ -1,69 +1,114 @@
-# React + TypeScript + Vite
+# React/Frontend Interview Training
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive React and frontend interview preparation project with practical implementations, architectural decisions, and modern development practices.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project serves as both a functional React application and a documentation resource for frontend interview preparation. It includes real-world setup decisions, implementation examples, and explanations of modern development practices.
 
-## Expanding the ESLint configuration
+## Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Native Development (Recommended)
+```bash
+# Install dependencies
+npm install
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Start development server
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+# Run tests
+npm run test
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Run linting
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Docker Development (Optional)
+```bash
+# See journey/2e-optional-docker-setup.md for setup
+docker-compose up --build  # First time
+docker-compose up          # Subsequent runs
 ```
+
+## Project Structure
+
+```
+├── README.md                 # This file
+├── CONTRIBUTING.md           # Guidelines for adding interview topics
+├── interview-topics.md       # Complete list of React/Frontend topics
+├── journey/                  # Step-by-step setup implementation guides
+├── adr/                      # Architecture Decision Records (why we chose each tool)
+├── src/                      # React application source code
+└── e2e/                      # End-to-end test files
+```
+
+## Technology Stack
+
+- **Build Tool**: Vite with TypeScript + SWC
+- **Code Quality**: Biome (linting + formatting)
+- **Git Hooks**: Husky + lint-staged + commitlint
+- **Unit Testing**: Vitest + React Testing Library
+- **E2E Testing**: Playwright
+- **Development**: Optional Docker setup
+
+## Documentation
+
+### Implementation Guides
+- [Journey Documentation](journey/README.md) - Step-by-step setup guides with decision reasoning
+
+### Architectural Decisions
+- [ADR Index](adr/README.md) - Complete list of architectural decisions
+- Each ADR documents why specific technologies were chosen
+
+### Interview Topics
+- [Interview Topics List](interview-topics.md) - Comprehensive React/Frontend topics to cover
+- Organized by priority and completion status
+
+## Commands Reference
+
+```bash
+# Install dependencies
+npm install                              # Native
+# Docker doesn't need separate install
+
+# Start development server  
+npm run dev                              # Native
+docker-compose up                        # Docker
+
+# Run tests
+npm run test                             # Native  
+docker-compose exec react-app npm test  # Docker
+
+# Run linting
+npm run lint                             # Native
+docker-compose exec react-app npm run lint  # Docker
+
+# Additional commands
+npm run build                            # Build for production
+npm run type-check                       # TypeScript checking
+npx playwright test                      # E2E tests
+```
+
+## Learning Path
+
+1. **Start with the journey docs** - Understand setup decisions and implementation
+2. **Review ADRs** - Learn the reasoning behind architectural choices
+3. **Practice interview topics** - Work through the topics list systematically
+4. **Implement features** - Add new components following established patterns
+
+## Project Purpose
+
+This project demonstrates:
+- **Modern React development** practices and tooling
+- **Professional workflow** setup and automation
+- **Architectural thinking** through documented decisions
+- **Interview preparation** with practical examples
+- **Team collaboration** considerations and trade-offs
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding new interview topics and documentation.
+
+## License
+
+This project is for educational purposes - interview training and learning modern React development practices.
