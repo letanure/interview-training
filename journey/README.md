@@ -50,6 +50,14 @@ This directory contains detailed implementation guides for setting up a modern R
 - Docker implementation with development focus
 - Development workflow comparison
 
+#### 2f. Dead Code Detection
+**[2f-dead-code-detection-knip.md](2f-dead-code-detection-knip.md)**
+- Comprehensive dead code analysis with Knip
+- Comparison with TypeScript compiler and ESLint alternatives
+- When and how to run dead code detection
+- CI integration and team workflow
+- Configuration for TypeScript + Vite projects
+
 ## Document Structure
 
 Each journey document follows a consistent structure:

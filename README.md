@@ -83,6 +83,10 @@ docker-compose exec react-app npm test  # Docker
 npm run lint                             # Native
 docker-compose exec react-app npm run lint  # Docker
 
+# Dead code detection
+npm run lint:dead-code                   # Native
+docker-compose exec react-app npm run lint:dead-code  # Docker
+
 # Additional commands
 npm run build                            # Build for production
 npm run type-check                       # TypeScript checking

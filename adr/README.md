@@ -12,6 +12,7 @@ This directory contains Architecture Decision Records for the React/Frontend int
 | [004](004-testing-infrastructure.md) | Unit Testing Infrastructure Selection | Accepted | 2025-01-14 |
 | [005](005-e2e-testing-playwright.md) | E2E Testing Infrastructure Selection | Accepted | 2025-01-14 |
 | [006](006-optional-docker-setup.md) | Optional Docker Development Setup | Accepted | 2025-01-14 |
+| [007](007-dead-code-detection-knip.md) | Dead Code Detection with Knip | Accepted | 2025-01-14 |
 
 ## ADR Format
 
