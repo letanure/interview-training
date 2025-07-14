@@ -3,9 +3,18 @@
 ## Current Status
 - ✅ **Creating a React app in 2025** - document setup process, options, and decisions
 - ✅ **Code Quality & Formatting** - ESLint vs Prettier vs Biome analysis and decision
+- ✅ **Development Workflow** - pre-commit hooks, conventional commits, CI/CD
 - 🔄 **Testing Infrastructure** - framework selection, structure, coverage
-- [ ] **Development Workflow** - pre-commit hooks, conventional commits, CI/CD
-- [ ] **Performance & Monitoring** - bundle analysis, error tracking
+
+## Project Setup Essentials
+- [ ] **CSS/Styling Solution** - CSS Modules, Tailwind, or Styled Components
+- [ ] **State Management Setup** - Context API, Zustand, or Redux Toolkit  
+- [ ] **Routing Setup** - React Router or TanStack Router
+- [ ] **Environment Variables** - .env files and type-safe env handling
+- [ ] **Error Boundaries** - implementation and error handling strategy
+- [ ] **Performance Monitoring** - Core Web Vitals tracking and optimization
+- [ ] **Bundle Analyzer** - setup and optimization workflow
+- [ ] **CI/CD Pipeline** - GitHub Actions or similar automation
 
 ## High Priority Topics
 
