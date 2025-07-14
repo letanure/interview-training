@@ -62,7 +62,62 @@ This document is part of the **Project Setup Essentials** series, focusing on en
 
 ### Playwright Setup
 
-[TO BE DOCUMENTED]
+**Installation:**
+```bash
+npm init playwright@latest
+```
+
+**Configuration Choices Made:**
+- **Test directory**: `e2e/` - Clear separation from unit tests
+- **GitHub Actions workflow**: Yes - Automated CI/CD testing  
+- **Install browsers**: Yes - Ready to run tests immediately
+
+**Setup Output:**
+```
+Getting started with writing end-to-end tests with Playwright:
+Initializing project in '.'
+✔ Where to put your end-to-end tests? · e2e
+✔ Add a GitHub Actions workflow? (y/N) · true
+✔ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true
+```
+
+**Files Created:**
+- `playwright.config.ts` - Main configuration
+- `e2e/` - Test directory
+- `.github/workflows/playwright.yml` - CI/CD workflow
+- Browsers installed for Chromium, Firefox, and Safari
+
+**Configuration Customization:**
+
+**My Configuration Decisions:**
+
+1. **Browser Selection**: Chromium only
+   - **Reasoning**: Faster test execution for development
+   - **Real projects**: Would use all browsers for comprehensive coverage
+
+2. **Base URL**: Update to Vite's port
+   - **Change**: `http://localhost:3000` → `http://localhost:5173`
+   - **Reasoning**: Match Vite's default development server
+
+3. **Web Server**: Enable automatic startup
+   - **Purpose**: Automatically starts dev server before tests
+   - **Benefit**: No manual server management needed
+
+4. **Parallel Execution**: 
+   - **Local**: All CPU cores (fast development)
+   - **CI**: Single worker (stability over speed)
+   - **Reasoning**: CI environments can be resource-constrained
+
+**Configuration Updates:**
+
+**Manual Configuration Changes in `playwright.config.ts`:**
+
+1. **Keep only Chromium project** - Comment out Firefox and Safari projects
+2. **Update baseURL** - Uncomment and change to `http://localhost:5173`
+3. **Enable webServer** - Uncomment webServer block and set:
+   - `command: 'npm run dev'` (instead of npm run start)
+   - `url: 'http://localhost:5173'`
+   - `reuseExistingServer: !process.env.CI`
 
 ## Interview Relevance
 
