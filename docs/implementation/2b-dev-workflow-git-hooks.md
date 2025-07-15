@@ -103,7 +103,7 @@ This document is part of the **Project Setup Essentials** series, focusing on de
 ### Installation Steps
 
 ```bash
-# 1. Install Husky
+# 1. Install Husky (v9)
 npm install -D husky
 npx husky init
 
@@ -115,6 +115,7 @@ npm install -D @commitlint/cli @commitlint/config-conventional
 
 # 4. Configure commitlint
 echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+# Note: For Node v24, ensure package.json has "type": "module" or rename to commitlint.config.mjs
 
 # 5. Add lint-staged config to package.json
 npx json -I -f package.json -e 'this["lint-staged"]={"*.{js,jsx,ts,tsx}": "biome check --fix"}'
@@ -122,6 +123,9 @@ npx json -I -f package.json -e 'this["lint-staged"]={"*.{js,jsx,ts,tsx}": "biome
 # 6. Set up git hooks
 echo "npx lint-staged" > .husky/pre-commit
 echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+
+# 7. Make hooks executable
+chmod +x .husky/pre-commit .husky/commit-msg
 ```
 
 ### Testing the Setup

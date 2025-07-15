@@ -8,9 +8,9 @@ This project uses a **clear 4-tier documentation system**:
 
 | Doc Type                                         | Purpose                | Example                                                   |
 | ------------------------------------------------ | ---------------------- | --------------------------------------------------------- |
-| **[ADR](adr/README.md)**                         | What was decided       | "We chose Tailwind CSS over styled-components"            |
+| **[ADR]. (adr/README.md)**                       | What was decided       | "We chose Tailwind CSS over styled-components"            |
 | **[Implementation](implementation/README.md)**   | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
-| **[Best Practices](best-practices/)**            | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
+| **[Best Pr actices](best-practices/)**           | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
 | **[Interview Guide](interview-guide/README.md)** | How to talk about it   | "When asked about CSS, say: 'I use utility-first...'"     |
 
 ## Quick Navigation
