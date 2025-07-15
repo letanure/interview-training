@@ -35,16 +35,16 @@ docker-compose up          # Subsequent runs
 ## Project Structure
 
 ```
-├── README.md                   # This file
-├── CONTRIBUTING.md            # Guidelines for adding interview topics
-├── interview-topics.md        # Complete list of React/Frontend topics
-├── docs/                      # All documentation
+├── README.md              # This file
+├── CONTRIBUTING.md        # Guidelines for adding interview topics
+├── interview-topics.md    # Complete list of React/Frontend topics
+├── docs/                  # All documentation
 │   ├── adr/               # Architectural Decision Records
 │   ├── implementation/    # Step-by-step implementation guides
 │   ├── best-practices/    # Usage guidelines and how-to guides
 │   └── interview-guide/   # Interview preparation materials
-├── src/                       # React application source code
-└── e2e/                       # End-to-end test files
+├── src/                   # React application source code
+└── e2e/                   # End-to-end test files
 ```
 
 ## Technology Stack
@@ -90,7 +90,7 @@ docker-compose up                        # Docker
 
 # Run tests
 npm run test                             # Native
-docker-compose exec react-app npm test  # Docker
+docker-compose exec react-app npm test   # Docker
 
 # Code quality checks
 npm run format:check                     # Check code style (tabs, quotes, spacing)
