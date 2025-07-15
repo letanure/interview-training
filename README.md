@@ -36,8 +36,9 @@ docker-compose up          # Subsequent runs
 ├── README.md                 # This file
 ├── CONTRIBUTING.md           # Guidelines for adding interview topics
 ├── interview-topics.md       # Complete list of React/Frontend topics
-├── journey/                  # Step-by-step setup implementation guides
-├── adr/                      # Architecture Decision Records (why we chose each tool)
+├── docs/                     # Current applied rules and best practices
+├── journey/                  # Implementation details with options considered
+├── adr/                      # Decision log (what, when, why)
 ├── src/                      # React application source code
 └── e2e/                      # End-to-end test files
 ```
@@ -50,15 +51,18 @@ docker-compose up          # Subsequent runs
 - **Unit Testing**: Vitest + React Testing Library
 - **E2E Testing**: Playwright
 - **Development**: Optional Docker setup
+- **Bundle Size**: 500KB budget with CI enforcement (PR checks will fail if exceeded)
 
 ## Documentation
 
 ### Implementation Guides
-- [Journey Documentation](journey/README.md) - Step-by-step setup guides with decision reasoning
+- [Journey Documentation](journey/README.md) - Step-by-step implementation details with options considered and reasoning
 
-### Architectural Decisions
-- [ADR Index](adr/README.md) - Complete list of architectural decisions
-- Each ADR documents why specific technologies were chosen
+### Current Applied Rules
+- [Documentation](docs/README.md) - Best practices, patterns, and development guidelines currently in use
+
+### Decision Log
+- [ADR Index](adr/README.md) - Historical record of architectural decisions (what, when, why)
 
 ### Interview Topics
 - [Interview Topics List](interview-topics.md) - Comprehensive React/Frontend topics to cover
@@ -91,6 +95,11 @@ docker-compose exec react-app npm run lint:dead-code  # Docker
 npm run build                            # Build for production
 npm run type-check                       # TypeScript checking
 npx playwright test                      # E2E tests
+
+# Bundle size monitoring (budget: 500KB)
+npm run size:check                       # Check if bundle exceeds budget
+npm run size:analyze                     # Visual bundle composition analysis
+npm run size:info                        # Show file sizes in terminal
 ```
 
 ## Learning Path

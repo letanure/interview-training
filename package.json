@@ -21,7 +21,10 @@
 		"test:ui": "vitest --ui",
 		"test": "vitest",
 		"lint:dead-code": "knip",
-		"lint:unused-deps": "knip --dependencies"
+		"lint:unused-deps": "knip --dependencies",
+		"size:check": "npm run build && node scripts/check-bundle-size.js",
+		"size:analyze": "npx vite-bundle-visualizer",
+		"size:info": "npm run build && ls -la dist/assets/ && du -sh dist/"
 	},
 	"dependencies": {
 		"react": "^19.1.0",
@@ -32,6 +35,7 @@
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@playwright/test": "^1.54.1",
+		"@size-limit/preset-big-lib": "^11.2.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.3.0",
 		"@testing-library/user-event": "^14.6.1",
@@ -44,11 +48,20 @@
 		"jsdom": "^26.1.0",
 		"knip": "^5.61.3",
 		"lint-staged": "^16.1.2",
+		"size-limit": "^11.2.0",
 		"typescript": "~5.8.3",
 		"vite": "^7.0.4",
+		"vite-bundle-visualizer": "^1.2.1",
 		"vitest": "^3.2.4"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": "biome check --fix"
-	}
+	},
+	"size-limit": [
+		{
+			"path": "dist/assets/index-DAlYuvWc.js",
+			"limit": "100 KB",
+			"gzip": true
+		}
+	]
 }

@@ -58,6 +58,14 @@ This directory contains detailed implementation guides for setting up a modern R
 - CI integration and team workflow
 - Configuration for TypeScript + Vite projects
 
+#### 2g. Bundle Size Budgets
+**[2g-bundle-size-budgets.md](2g-bundle-size-budgets.md)**
+- Automated bundle size monitoring and performance budgets
+- Bundle analyzers vs automated budgets comparison
+- Performance impact and user experience correlation
+- CI integration for preventing bundle size regressions
+- On-demand analysis tools and optimization strategies
+
 ## Document Structure
 
 Each journey document follows a consistent structure:

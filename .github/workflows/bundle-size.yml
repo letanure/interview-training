@@ -1,0 +1,128 @@
+name: Bundle Size Check
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'package*.json'
+      - 'vite.config.ts'
+      - '.github/workflows/bundle-size.yml'
+
+jobs:
+  check-bundle-size:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build project
+        run: npm run build
+      
+      - name: Analyze bundle size
+        id: size-check
+        run: node scripts/check-bundle-size.js
+      
+      - name: Checkout base branch
+        run: |
+          git checkout ${{ github.base_ref }}
+          npm ci
+      
+      - name: Build base branch
+        run: npm run build
+      
+      - name: Analyze base branch bundle size
+        id: base-size
+        run: |
+          node scripts/check-bundle-size.js
+          # Rename outputs for base branch
+          mv $GITHUB_OUTPUT temp_output
+          sed 's/main_size=/base_main_size=/g; s/css_size=/base_css_size=/g; s/total_size=/base_total_size=/g; s/budget_exceeded=/base_budget_exceeded=/g' temp_output >> $GITHUB_OUTPUT
+          rm temp_output
+      
+      - name: Calculate size difference
+        id: diff
+        env:
+          CURRENT_MAIN_SIZE: ${{ steps.size-check.outputs.main_size }}
+          CURRENT_CSS_SIZE: ${{ steps.size-check.outputs.css_size }}
+          CURRENT_TOTAL_SIZE: ${{ steps.size-check.outputs.total_size }}
+          BASE_MAIN_SIZE: ${{ steps.base-size.outputs.base_main_size }}
+          BASE_CSS_SIZE: ${{ steps.base-size.outputs.base_css_size }}
+          BASE_TOTAL_SIZE: ${{ steps.base-size.outputs.base_total_size }}
+        run: node scripts/compare-bundle-sizes.js
+      
+      - name: Generate PR comment
+        id: comment
+        env:
+          MAIN_SIZE: ${{ steps.size-check.outputs.main_size }}
+          CSS_SIZE: ${{ steps.size-check.outputs.css_size }}
+          TOTAL_SIZE: ${{ steps.size-check.outputs.total_size }}
+          BASE_MAIN_SIZE: ${{ steps.base-size.outputs.base_main_size }}
+          BASE_CSS_SIZE: ${{ steps.base-size.outputs.base_css_size }}
+          BASE_TOTAL_SIZE: ${{ steps.base-size.outputs.base_total_size }}
+          MAIN_DIFF: ${{ steps.diff.outputs.main_diff }}
+          CSS_DIFF: ${{ steps.diff.outputs.css_diff }}
+          TOTAL_DIFF: ${{ steps.diff.outputs.total_diff }}
+          PERCENT_CHANGE: ${{ steps.diff.outputs.percent_change }}
+          BUDGET_EXCEEDED: ${{ steps.size-check.outputs.budget_exceeded }}
+        run: |
+          COMMENT_BODY=$(node scripts/generate-pr-comment.js)
+          # Escape newlines for GitHub Actions
+          COMMENT_BODY="${COMMENT_BODY//$'\n'/'%0A'}"
+          echo "body=$COMMENT_BODY" >> $GITHUB_OUTPUT
+      
+      - name: Comment PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const body = decodeURIComponent('${{ steps.comment.outputs.body }}');
+            
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const botComment = comments.find(comment => 
+              comment.user.type === 'Bot' && comment.body.includes('Bundle Size Report')
+            );
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }
+      
+      - name: Fail if budget exceeded
+        if: steps.size-check.outputs.budget_exceeded == 'true'
+        run: |
+          echo "❌ Bundle size budget exceeded!"
+          echo "Current size: ${{ steps.size-check.outputs.total_size }}KB"
+          echo "Budget: 500KB"
+          exit 1
