@@ -33,15 +33,16 @@ docker-compose up          # Subsequent runs
 ## Project Structure
 
 ```
-├── README.md                 # This file
-├── CONTRIBUTING.md           # Guidelines for adding interview topics
-├── interview-topics.md       # Complete list of React/Frontend topics
-├── interview-guide/          # Ready-to-use interview explanations and talking points
-├── docs/                     # Current applied rules and best practices
-├── journey/                  # Implementation details with options considered
-├── adr/                      # Decision log (what, when, why)
-├── src/                      # React application source code
-└── e2e/                      # End-to-end test files
+├── README.md                   # This file
+├── CONTRIBUTING.md            # Guidelines for adding interview topics
+├── interview-topics.md        # Complete list of React/Frontend topics
+├── docs/                      # All documentation
+│   ├── 📋 adr/               # Architectural Decision Records
+│   ├── 🗺️ implementation/    # Step-by-step implementation guides
+│   ├── 📖 best-practices/    # Usage guidelines and how-to guides
+│   └── 🎯 interview-guide/   # Interview preparation materials
+├── src/                       # React application source code
+└── e2e/                       # End-to-end test files
 ```
 
 ## Technology Stack
@@ -55,21 +56,24 @@ docker-compose up          # Subsequent runs
 - **Bundle Size**: 500KB budget with CI enforcement (PR checks will fail if exceeded)
 - **CSS/Styling**: Multiple solutions implemented - Vanilla Extract, Tailwind CSS v4, CSS Modules, shadcn/ui (pending)
 
-## Documentation
+## Documentation Framework
 
-### Implementation Guides
-- [Journey Documentation](journey/README.md) - Step-by-step implementation details with options considered and reasoning
+This project uses a **clear 4-tier documentation system** to organize knowledge:
 
-### Current Applied Rules
-- [Documentation](docs/README.md) - Best practices, patterns, and development guidelines currently in use
+| Doc Type | Purpose | Example |
+|----------|---------|---------|
+| **📋 [ADR](docs/adr/README.md)** | What was decided | "We chose Tailwind CSS over styled-components" |
+| **🗺️ [Implementation](docs/implementation/README.md)** | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
+| **📖 [Best Practices](docs/best-practices/)** | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`" |
+| **🎯 [Interview Guide](docs/interview-guide/README.md)** | How to talk about it | "When asked about CSS, say: 'I use utility-first...'" |
 
-### Decision Log
-- [ADR Index](adr/README.md) - Historical record of architectural decisions (what, when, why)
+### Quick Navigation
 
-### Interview Topics
-- [Interview Topics List](interview-topics.md) - Comprehensive React/Frontend topics to cover
-- [Interview Guide](interview-guide/README.md) - Ready-to-use explanations and talking points
-- Organized by priority and completion status
+- **📋 [ADR](docs/adr/README.md)** - What's the problem, the decision made, minimal arguing
+- **🗺️ [Implementation Details](docs/implementation/README.md)** - All options, pros/cons, reasoning, step-by-step guides
+- **📖 [Best Practices](docs/best-practices/)** - What to do in this project, how to use tools, patterns to follow
+- **🎯 [Interview Guide](docs/interview-guide/README.md)** - Ready-to-use explanations and talking points for interviews
+- **📝 [Interview Topics List](interview-topics.md)** - Comprehensive React/Frontend topics to cover
 
 ## Commands Reference
 
@@ -106,10 +110,13 @@ npm run size:info                        # Show file sizes in terminal
 
 ## Learning Path
 
-1. **Start with the journey docs** - Understand setup decisions and implementation
-2. **Review ADRs** - Learn the reasoning behind architectural choices
-3. **Practice interview topics** - Work through the topics list systematically
-4. **Implement features** - Add new components following established patterns
+1. **📋 Review ADRs** - Learn what decisions were made and basic context
+2. **🗺️ Read Journey docs** - Understand the full reasoning and implementation details  
+3. **📖 Study Best Practices** - Learn how to use tools and patterns properly in this project
+4. **🎯 Practice Interview Responses** - Use the interview guide for talking points
+5. **💻 Implement Features** - Add new components following established patterns
+
+This path takes you from **decisions → reasoning → usage → communication → practice**.
 
 ## Project Purpose
 

@@ -2,7 +2,18 @@
 
 This document provides guidelines for contributors to add new interview topics, documentation, and implementations to this training project.
 
-## Adding New Interview Topics
+## Documentation Structure
+
+This project uses a **4-tier documentation system**. Before contributing, understand where your content belongs:
+
+| Doc Type | Purpose | Example |
+|----------|---------|---------|
+| **📋 [ADR](docs/adr/README.md)** | What was decided | "We chose Tailwind CSS over styled-components" |
+| **🗺️ [Implementation](docs/implementation/README.md)** | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
+| **📖 [Best Practices](docs/best-practices/)** | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`" |
+| **🎯 [Interview Guide](docs/interview-guide/README.md)** | How to talk about it | "When asked about CSS, say: 'I use utility-first...'" |
+
+## Adding New Content
 
 ### 1. Update Interview Topics List
 
@@ -12,19 +23,23 @@ Add your new topic to `interview-topics.md`:
 - [ ] **Your Topic Name** - Brief description of what it covers
 ```
 
-### 2. Create Implementation Documentation
+### 2. Choose the Right Documentation Type
 
-Create a new file in the appropriate directory:
+**For architectural decisions:**
+- Location: `docs/adr/`
+- Format: Follow ADR template with context, decision, alternatives, consequences
 
-**For React-specific topics:**
-- Location: `src/topics/[topic-name]/`
-- Files needed:
-  - `README.md` - Topic explanation and theory
-  - `implementation.md` - Code examples and practical implementation
-  - `questions.md` - Common interview questions and answers
+**For implementation guides:**
+- Location: `docs/implementation/`
+- Format: Step-by-step with options considered and reasoning
 
-**For general concepts:**
-- Location: `docs/concepts/[topic-name].md`
+**For usage guidelines:**
+- Location: `docs/best-practices/`
+- Format: How-to guides with do's and don'ts
+
+**For interview preparation:**
+- Location: `docs/interview-guide/`
+- Format: Common questions with talking points and code examples
 
 ### 3. Implementation Structure
 
@@ -240,16 +255,18 @@ Remember that this project aims to:
 
 ```
 interview-training/
-├── README.md                 # Project overview
-├── CONTRIBUTING.md          # This file
-├── interview-topics.md      # Master list of topics
+├── README.md                   # Project overview
+├── CONTRIBUTING.md            # This file
+├── interview-topics.md        # Master list of topics
+├── docs/                      # All documentation
+│   ├── adr/                  # Architectural Decision Records
+│   ├── implementation/       # Step-by-step implementation guides
+│   ├── best-practices/       # Usage guidelines and how-to guides
+│   └── interview-guide/      # Interview preparation materials
 ├── src/
-│   ├── topics/             # Implementation examples
-│   └── components/         # Reusable components
-├── docs/
-│   └── concepts/           # General concept explanations
-├── journey/                # Project setup documentation
-└── adr/                   # Architecture decisions
+│   ├── examples/            # Working code examples
+│   └── components/          # Reusable components
+└── e2e/                    # End-to-end tests
 ```
 
 ## Questions?
