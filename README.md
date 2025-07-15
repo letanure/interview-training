@@ -36,6 +36,7 @@ docker-compose up          # Subsequent runs
 ├── README.md                 # This file
 ├── CONTRIBUTING.md           # Guidelines for adding interview topics
 ├── interview-topics.md       # Complete list of React/Frontend topics
+├── interview-guide/          # Ready-to-use interview explanations and talking points
 ├── docs/                     # Current applied rules and best practices
 ├── journey/                  # Implementation details with options considered
 ├── adr/                      # Decision log (what, when, why)
@@ -52,7 +53,7 @@ docker-compose up          # Subsequent runs
 - **E2E Testing**: Playwright
 - **Development**: Optional Docker setup
 - **Bundle Size**: 500KB budget with CI enforcement (PR checks will fail if exceeded)
-- **CSS/Styling**: Multiple solutions implemented for demonstration and practice
+- **CSS/Styling**: Multiple solutions implemented - Vanilla Extract, Tailwind CSS v4, CSS Modules, shadcn/ui (pending)
 
 ## Documentation
 
@@ -67,6 +68,7 @@ docker-compose up          # Subsequent runs
 
 ### Interview Topics
 - [Interview Topics List](interview-topics.md) - Comprehensive React/Frontend topics to cover
+- [Interview Guide](interview-guide/README.md) - Ready-to-use explanations and talking points
 - Organized by priority and completion status
 
 ## Commands Reference

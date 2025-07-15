@@ -1,5 +1,6 @@
 import type React from "react";
 import { ButtonCssModules } from "./ButtonCssModules/ButtonCssModules";
+import { ButtonTailwind } from "./ButtonTailwind/ButtonTailwind";
 import { ButtonVanillaExtract } from "./ButtonVanillaExtract/ButtonVanillaExtract";
 
 export const ButtonShowcase: React.FC = () => {
@@ -12,6 +13,9 @@ export const ButtonShowcase: React.FC = () => {
 
 			<section style={{ marginBottom: "3rem" }}>
 				<h2>CSS Modules Implementation</h2>
+				<p style={{ color: "#666", marginBottom: "1rem" }}>
+					Traditional scoped CSS with module imports
+				</p>
 				<div
 					style={{
 						display: "flex",
@@ -113,14 +117,62 @@ export const ButtonShowcase: React.FC = () => {
 				</div>
 			</section>
 
+			<section style={{ marginBottom: "3rem" }}>
+				<h2>Tailwind CSS Implementation</h2>
+				<p style={{ color: "#666", marginBottom: "1rem" }}>
+					Utility-first CSS framework with rapid development
+				</p>
+				<div
+					style={{
+						display: "flex",
+						gap: "1rem",
+						flexWrap: "wrap",
+						marginBottom: "1rem",
+					}}
+				>
+					<ButtonTailwind variant="primary" size="small">
+						Small Primary
+					</ButtonTailwind>
+					<ButtonTailwind variant="primary" size="medium">
+						Medium Primary
+					</ButtonTailwind>
+					<ButtonTailwind variant="primary" size="large">
+						Large Primary
+					</ButtonTailwind>
+				</div>
+
+				<div
+					style={{
+						display: "flex",
+						gap: "1rem",
+						flexWrap: "wrap",
+						marginBottom: "1rem",
+					}}
+				>
+					<ButtonTailwind variant="secondary" size="small">
+						Small Secondary
+					</ButtonTailwind>
+					<ButtonTailwind variant="secondary" size="medium">
+						Medium Secondary
+					</ButtonTailwind>
+					<ButtonTailwind variant="secondary" size="large">
+						Large Secondary
+					</ButtonTailwind>
+				</div>
+
+				<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+					<ButtonTailwind variant="primary" disabled>
+						Disabled Primary
+					</ButtonTailwind>
+					<ButtonTailwind variant="secondary" disabled>
+						Disabled Secondary
+					</ButtonTailwind>
+				</div>
+			</section>
+
 			{/* Placeholder sections for other implementations */}
 			<section style={{ marginBottom: "3rem" }}>
 				<h2>shadcn/ui Implementation</h2>
-				<p style={{ color: "#666" }}>Coming next...</p>
-			</section>
-
-			<section style={{ marginBottom: "3rem" }}>
-				<h2>Tailwind CSS Implementation</h2>
 				<p style={{ color: "#666" }}>Coming next...</p>
 			</section>
 		</div>

@@ -207,17 +207,30 @@ npm install @vanilla-extract/css @vanilla-extract/vite-plugin --legacy-peer-deps
 - Zero-runtime: generates static CSS at build time
 - Scoped class names automatically generated
 
-### Step 2: Install and Configure shadcn/ui 🚧 PENDING
+### Step 2: Install and Configure Tailwind CSS v4 ✅ COMPLETED
+```bash
+npm install -D tailwindcss @tailwindcss/vite --legacy-peer-deps
+npm install clsx tailwind-merge --legacy-peer-deps
+```
+
+**Configuration:**
+- Added `tailwindcss()` plugin to `vite.config.ts`
+- Added Tailwind directives to `src/index.css`
+- Created `cn` utility for class merging with clsx + tailwind-merge
+- Note: Used `--legacy-peer-deps` due to Vite 7 compatibility
+
+**Implementation Details:**
+- Created `ButtonTailwind.tsx` with utility classes
+- Uses conditional classes with `cn()` utility
+- Includes responsive design utilities
+- Full accessibility support with focus states
+
+### Step 3: Install and Configure shadcn/ui 🚧 PENDING
 ```bash
 npx shadcn-ui@latest init
 npx shadcn-ui@latest add button
 ```
-
-### Step 3: Install and Configure Tailwind CSS v4 🚧 PENDING
-```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
+**Note:** shadcn/ui is built on top of Tailwind CSS, so Tailwind must be installed first.
 
 ### Step 4: Setup CSS Modules ✅ COMPLETED
 ```bash
@@ -234,8 +247,8 @@ npx tailwindcss init -p
 
 ### Step 5: Create Example Components
 - **Vanilla Extract example**: ✅ Zero-runtime type-safe CSS-in-JS
-- **shadcn/ui example**: 🚧 Copy-paste component library
-- **Tailwind example**: 🚧 Utility-first component
+- **Tailwind example**: ✅ Utility-first component
+- **shadcn/ui example**: 🚧 Copy-paste component library (requires Tailwind)
 - **CSS Modules example**: ✅ Traditional component with scoped styles
 
 ## Key Differences: CSS Modules vs Vanilla Extract
@@ -275,6 +288,19 @@ const className = variants[variant]; // TypeScript knows valid variants
 
 **The Interview Story:**
 "CSS Modules are fine for simple cases, but notice how `styles.primari` would only be caught at runtime. Vanilla Extract gives you compile-time type safety without any runtime overhead - best of both worlds."
+
+## Tailwind Implementation Approach
+
+For detailed Tailwind implementation strategies and best practices, see: **`docs/tailwind-best-practices.md`**
+
+**Our Implementation Decision:**
+- **Pure utility classes** for simple and layout components
+- **Component variants pattern** for reusable UI components
+- **No @apply usage** - defeats utility-first purpose
+
+**Key Tools:**
+- `clsx` + `tailwind-merge` for conditional classes
+- CVA (Class Variance Authority) for component variants
 
 ### Step 6: Documentation and Best Practices
 - Document when to use each approach
