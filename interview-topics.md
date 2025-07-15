@@ -4,7 +4,7 @@
 
 ## Project Setup Essentials
 
-- [ ] **CSS/Styling Solution** - CSS Modules, Tailwind, or Styled Components
+- [x] **CSS/Styling Solution** - CSS Modules, Tailwind, Vanilla Extract, shadcn/ui (multiple implementations)
 - [ ] **State Management Setup** - Context API, Zustand, or Redux Toolkit
 - [ ] **Routing Setup** - React Router or TanStack Router
 - [ ] **Environment Variables** - .env files and type-safe env handling
@@ -12,6 +12,13 @@
 - [ ] **Performance Monitoring** - Core Web Vitals tracking and optimization
 - [ ] **CI/CD Pipeline** - GitHub Actions or similar automation
 - [ ] **Code Generators** - templates and scaffolding for components, hooks, pages, and tests
+
+## Pending Technical Tasks
+
+- [ ] **shadcn/ui Implementation** - Complete CSS styling solution examples
+- [ ] **Markdown Link Linter** - Tool to check internal links in documentation
+- [ ] **Documentation Generator** - Script to keep folder descriptions and indexes up to date
+- [ ] **Interview Guide Expansion** - Add guides for remaining implemented topics
 
 ## Current Status
 
