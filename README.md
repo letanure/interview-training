@@ -83,17 +83,16 @@ docker-compose up                        # Docker
 npm run test                             # Native  
 docker-compose exec react-app npm test  # Docker
 
-# Run linting
-npm run lint                             # Native
-docker-compose exec react-app npm run lint  # Docker
+# Code quality checks
+npm run format:check                     # Check code style (tabs, quotes, spacing)
+npm run format:fix                       # Fix code style issues
+npm run lint:check                       # Check code quality (unused vars, logic errors)
+npm run lint:fix                         # Fix code quality issues
+npm run lint:ts                          # Check TypeScript types
+npm run lint:dead-code                   # Check for dead code
 
-# Dead code detection
-npm run lint:dead-code                   # Native
-docker-compose exec react-app npm run lint:dead-code  # Docker
-
-# Additional commands
+# Build and test
 npm run build                            # Build for production
-npm run type-check                       # TypeScript checking
 npx playwright test                      # E2E tests
 
 # Bundle size monitoring (budget: 500KB)

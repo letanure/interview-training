@@ -14,6 +14,7 @@ This directory contains Architecture Decision Records for the React/Frontend int
 | [006](006-optional-docker-setup.md) | Optional Docker Development Setup | Accepted | 2025-01-14 | Native primary, Docker optional |
 | [007](007-dead-code-detection-knip.md) | Dead Code Detection with Knip | Accepted | 2025-01-14 | Knip for unused code detection |
 | [008](008-bundle-size-budgets.md) | Bundle Size Budgets and Performance Monitoring | Accepted | 2025-01-14 | 500KB budget with CI enforcement |
+| [009](009-npm-scripts-naming-convention.md) | NPM Scripts Naming Convention | Accepted | 2025-01-15 | category:action pattern for consistent script naming |
 
 ## ADR Format
 

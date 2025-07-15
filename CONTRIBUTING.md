@@ -127,7 +127,7 @@ More complex real-world usage
    ```bash
    npm run test
    npm run lint
-   npm run type-check
+   npm run lint:ts
    ```
 
 6. **Update main documentation**

@@ -116,11 +116,11 @@ npx @biomejs/biome init
 ```json
 {
   "scripts": {
-    "lint": "biome check",
+    "lint:check": "biome check",
     "lint:fix": "biome check --fix",
-    "format": "biome format --write",
+    "format:fix": "biome format --write",
     "format:check": "biome format",
-    "type-check": "tsc --noEmit"
+    "lint:ts": "tsc --noEmit"
   }
 }
 ```
@@ -130,10 +130,11 @@ The installation uses the latest Biome package. Be careful when running Biome co
 
 **Usage:**
 ```bash
-npm run lint           # Check linting and formatting
+npm run lint:check     # Check linting
 npm run lint:fix       # Fix auto-fixable issues
-npm run format         # Format code
-npm run type-check     # TypeScript type checking
+npm run format:check   # Check formatting
+npm run format:fix     # Fix formatting
+npm run lint:ts        # TypeScript type checking
 ```
 
 ---

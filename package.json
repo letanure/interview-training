@@ -6,25 +6,29 @@
 	"scripts": {
 		"build": "tsc -b && vite build",
 		"dev": "vite",
+		"preview": "vite preview",
+		"prepare": "husky && husky install",
+
 		"format:check": "biome format",
-		"format": "biome format --write",
+		"format:fix": "biome format --write",
+
+		"lint:check": "biome check",
 		"lint:fix": "biome check --fix",
 		"lint:ts": "tsc --noEmit",
-		"lint": "biome check",
-		"prepare": "husky && husky install",
-		"preview": "vite preview",
+		"lint:dead-code": "knip",
+		"lint:unused-deps": "knip --dependencies",
+
+		"size:analyze": "npx vite-bundle-visualizer",
+		"size:check": "npm run build && node scripts/check-bundle-size.js",
+		"size:info": "npm run build && ls -la dist/assets/ && du -sh dist/",
+
 		"test:coverage": "vitest --coverage",
 		"test:e2e:debug": "playwright test --debug",
 		"test:e2e:headed": "playwright test --headed",
 		"test:e2e:ui": "playwright test --ui",
 		"test:e2e": "playwright test",
 		"test:ui": "vitest --ui",
-		"test": "vitest",
-		"lint:dead-code": "knip",
-		"lint:unused-deps": "knip --dependencies",
-		"size:check": "npm run build && node scripts/check-bundle-size.js",
-		"size:analyze": "npx vite-bundle-visualizer",
-		"size:info": "npm run build && ls -la dist/assets/ && du -sh dist/"
+		"test": "vitest"
 	},
 	"dependencies": {
 		"react": "^19.1.0",

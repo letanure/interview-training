@@ -63,6 +63,51 @@ import debounce from 'lodash/debounce';
 | **Unused Code** | Dead code increases bundle size | Tree shaking + knip analysis | Regular dead code cleanup |
 | **Large Assets** | Images bundled with JavaScript | Asset optimization + CDN | Image optimization plugins |
 
+## NPM Scripts Naming Convention
+
+Follow consistent naming patterns for package.json scripts to improve developer experience:
+
+### Pattern: `category:action`
+
+**Categories:**
+- `format:*` = Code style (tabs, quotes, spacing)
+- `lint:*` = Code quality (unused vars, logic errors, TypeScript types, dead code)
+- `test:*` = Testing (unit, e2e, coverage)
+- `size:*` = Bundle size analysis
+
+**Standard Actions:**
+- `:check` = Check for issues (read-only, exits with error if issues found)
+- `:fix` = Fix issues automatically
+- `:analyze` = Interactive analysis (opens UI)
+- `:info` = Show information (terminal output)
+
+### Examples
+
+```bash
+# Code Quality
+npm run format:check       # Check code style
+npm run format:fix         # Fix code style issues
+npm run lint:check         # Check code quality
+npm run lint:fix           # Fix code quality issues
+npm run lint:ts            # Check TypeScript types
+
+# Testing
+npm run test               # Run unit tests
+npm run test:coverage      # Run tests with coverage
+npm run test:e2e:debug     # Debug E2E tests
+
+# Bundle Analysis
+npm run size:check         # Check bundle size budget
+npm run size:analyze       # Interactive bundle analysis
+npm run size:info          # Show bundle size info
+```
+
+**Benefits:**
+- Predictable command structure
+- Clear intent and functionality
+- Consistent across all script types
+- Easy to discover related commands
+
 ## Development Workflow
 
 ### Two-Tier Monitoring Strategy
@@ -85,6 +130,25 @@ import debounce from 'lodash/debounce';
 - Document decisions in ADRs for future reference
 
 ## Code Quality
+
+### Understanding Biome Commands
+
+Biome handles both formatting and linting, but with different commands:
+
+```bash
+# FORMATTING (code style: tabs, quotes, etc.)
+npm run format:check       # Check if code needs formatting
+npm run format:fix         # Fix formatting issues
+
+# LINTING (code quality: unused vars, logic errors, TypeScript, etc.)
+npm run lint:check         # Check for linting issues
+npm run lint:fix           # Fix linting issues
+npm run lint:ts            # Check TypeScript types
+```
+
+**Key Differences:**
+- **Formatting** (`biome format`) = Code style (tabs, quotes, spacing)
+- **Linting** (`biome check`, `tsc --noEmit`, `knip`) = Code quality (unused variables, logic errors, TypeScript types, dead code)
 
 ### Linting Configuration
 

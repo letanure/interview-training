@@ -66,6 +66,14 @@ This directory contains detailed implementation guides for setting up a modern R
 - CI integration for preventing bundle size regressions
 - On-demand analysis tools and optimization strategies
 
+#### 2h. NPM Scripts Naming Convention
+**[2h-npm-scripts-naming-convention.md](2h-npm-scripts-naming-convention.md)**
+- NPM scripts naming patterns analysis and comparison
+- Category:action structure implementation
+- Developer experience and discoverability considerations
+- Community standards and industry practices
+- Systematic approach to script organization
+
 ## Document Structure
 
 Each journey document follows a consistent structure:
