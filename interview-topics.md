@@ -15,7 +15,7 @@
 
 ## Pending Technical Tasks
 
-- [ ] **shadcn/ui Implementation** - Complete CSS styling solution examples
+- [x] **shadcn/ui Implementation** - Complete CSS styling solution examples
 - [ ] **Markdown Link Linter** - Tool to check internal links in documentation
 - [ ] **Documentation Generator** - Script to keep folder descriptions and indexes up to date
 - [ ] **Interview Guide Expansion** - Add guides for remaining implemented topics
@@ -98,6 +98,13 @@
 - [ ] Type-safe props and events
 - [ ] Declaration files and external types
 
+### Data Fetching & Caching
+
+- [ ] React Query — caching, stale time, pagination, mutations
+- [ ] SWR — fetch-on-focus, stale-while-revalidate pattern
+- [ ] Optimistic UI and background revalidation
+- [ ] Retry strategies and error recovery
+
 ## 4. Advanced React & Architecture
 
 ### React 18 & Concurrent Features
@@ -133,15 +140,37 @@
 ### Frontend Architecture at Scale
 
 - [ ] Monorepos — tools and structure (Turborepo, Nx)
-- [ ] Microfrontends — pros, cons, module federation
 - [ ] Shared design systems — structure and maintenance
 - [ ] Scaling folder structures and app design
+- [ ] Turbopack — replacing Webpack in Next.js, performance and caveats
+- [ ] Module Federation — microfrontend communication and shared libraries
 
 ### Progressive Web Apps (PWA)
 
 - [ ] Service Workers — lifecycle and caching strategies
 - [ ] Manifest and installability
-- [ ] Offline support and update flow
+
+### React Server Components (RSC)
+
+- [ ] React Server Components — concept, usage, and streaming
+- [ ] RSC vs client components — performance and bundling
+- [ ] RSC with Next.js — file conventions, rendering behavior
+
+### Edge Rendering & Middleware
+
+- [ ] Middleware in Next.js — auth, logging, redirects
+
+### Declarative State Machines
+
+- [ ] State machines — when to use them and why
+- [ ] XState — actors, transitions, guards
+- [ ] Integration with React — component-driven machines
+
+### AI + Frontend Workflows
+
+- [ ] AI UX patterns — chat UIs, prompt builders, streaming updates
+- [ ] Using LLM APIs in React — prompt input, request handling
+- [ ] AI results and app state — safe UI updates and fallback logic
 
 ## 5. Ecosystem & Practice
 
@@ -152,7 +181,55 @@
 - [ ] Internationalization (i18n) — react-i18next, next-intl basics
 
 - [ ] JavaScript Data Structures & Utilities — debounce, throttle, deep clone
-- [ ] Interview-style algorithm tasks — small coding challenges in JS
+- [ ] Component API Design — slots, variants, polymorphic `as` prop
+- [ ] Tailwind Variants and reusable styling patterns
+- [ ] Code Generation Tools — Hygen, Plop
+- [ ] Storybook or similar tools for component development
+- [ ] Editor & Dev Tools — VS Code, formatters, linters, snippets
+- [ ] React Portals — how to render modals/toasts outside DOM hierarchy
+- [ ] React DevTools — inspecting props, hooks, and re-renders
+- [ ] Error Monitoring Tools — using Sentry, LogRocket, or custom loggers
+- [ ] Schema-based Validation — Zod or Yup with React Hook Form
+- [ ] Design Tokens — shared themes with Tailwind or CSS variables
+- [ ] Build Targets — browserslist, esbuild/SWC, output formats
+
+### Accessibility & Internationalization Deep Dive
+
+- [ ] Accessibility testing — Lighthouse, axe DevTools, screen readers
+- [ ] WCAG principles — perceivable, operable, understandable, robust
+- [ ] Designing inclusive UIs — color contrast, motion preferences
+- [ ] Language switcher patterns — persistence, routing
+- [ ] Pluralization and number/date formatting
+- [ ] Handling RTL and localized layout changes
+- [ ] Linting for a11y and i18n
+
+### Developer Experience & Support
+
+- [ ] Developer onboarding — project structure, docs, reusable generators
+- [ ] DX-first UI systems — props contracts, documentation with JSDoc/Storybook
+- [ ] Error UX — human-friendly fallback UIs, graceful degradation
+
+### Modern Libraries & Design Systems
+
+- [ ] UI frameworks — Material UI, Radix UI, Chakra UI, shadcn/ui
+- [ ] Headless UI principles — separation of logic and rendering
+- [ ] Design systems at scale — tokens, theming, release strategies
+
+### Data Visualization & Interaction
+
+- [ ] Data visualization — Recharts, Victory, Nivo, D3 (when and why)
+- [ ] Motion & UX — Framer Motion patterns, gesture-driven interfaces
+- [ ] UI performance profiling — React Profiler, flamegraphs
+
+### AI in UI
+
+- [ ] AI-assisted UX — autocomplete, suggestions, dynamic UIs
+- [ ] Prompt design in UI — safe input handling, streaming feedback
+- [ ] Integrating LLMs — OpenAI API, Claude, or local models in apps
+- [ ] Guardrails & fallback — invalid input, hallucination prevention, user trust
+- [ ] Using AI SDKs — OpenAI, Anthropic, HuggingFace for frontend workflows
+- [ ] AI-powered IDEs — Cursor, Codeium, GitHub Copilot, Claude Code
+- [ ] Building with Claude Code — structure, iteration, and pairing best practices
 
 ## JavaScript & Browser Fundamentals
 
@@ -167,6 +244,36 @@
 - [ ] **Web Performance** - bundle splitting, tree shaking, lazy loading, caching strategies
 - [ ] **Accessibility (a11y)** - ARIA attributes, semantic HTML, keyboard navigation
 
+## Learning Resources & Influences
+
+### How to Learn Effectively
+
+- [ ] Learn in public — blog, tweet, or share what you build
+- [ ] Build small projects — test ideas with live examples
+- [ ] Teach while learning — explain topics to others
+- [ ] Pair with AI tools — use Claude Code, ChatGPT, Cursor
+- [ ] Join dev communities — Discord, GitHub, Twitter, local meetups
+
+### What to Read
+
+- [ ] Official React docs — https://react.dev
+- [ ] Kent C. Dodds’ blog — modern React patterns
+- [ ] Josh Comeau’s blog — deep dives into CSS, animation, UX
+- [ ] Dan Abramov’s blog — insights on React internals and design
+- [ ] Tailwind docs — best-in-class docs for utility-first CSS
+- [ ] EpicReact.Dev — advanced React learning platform
+
+### Who to Follow
+
+- [ ] @dan_abramov — React team, insights on internals and tooling
+- [ ] @swyx — learning in public, React + DX + AI
+- [ ] @cassidoo — dev education, career, React tips
+- [ ] @kentcdodds — testing, modern patterns, accessibility
+- [ ] @shadcn — Tailwind + UI libraries, component architecture
+- [ ] @thekitze — React best practices and tools
+- [ ] @rauchg — Vercel co-founder, Next.js and DX insights
+- [ ] @acemarke — Redux maintainer, React architecture tips
+
 ---
 
 **Legend:**
@@ -176,3 +283,15 @@
 - [ ] Pending
 
 _This list tracks all React/Frontend interview topics to be covered in this training project._
+
+## 9. Optional Extras & Deep Dives
+
+- [ ] Microfrontends — pros, cons, module federation
+- [ ] Edge functions vs API routes — use cases and performance
+- [ ] Offline support and update flow
+- [ ] Accessibility automation in CI
+- [ ] Contract Validation — using zod, tRPC, or openapi-typescript
+- [ ] Platform thinking — reusability across apps and teams
+- [ ] Interview-style algorithm tasks — small coding challenges in JS
+- [ ] Human-in-the-loop workflows — reviewing AI-generated code, version control strategies
+- [ ] Prompt engineering for devs — guiding LLMs to build components, tests, and docs

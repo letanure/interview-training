@@ -56,7 +56,9 @@ docker-compose up          # Subsequent runs
 - **E2E Testing**: Playwright
 - **Development**: Optional Docker setup
 - **Bundle Size**: 500KB budget with CI enforcement (PR checks will fail if exceeded)
-- **CSS/Styling**: Multiple solutions implemented - Vanilla Extract, Tailwind CSS v4, CSS Modules, shadcn/ui (pending)
+- **CSS/Styling**: Multiple solutions for demonstration - CSS Modules, Vanilla Extract, Tailwind CSS v4, shadcn/ui
+
+> **Note**: This is a demo/interview training project. In production, choose one primary CSS solution. We implement multiple approaches to demonstrate trade-offs and interview preparation. See [CSS Styling Comparison](docs/adr/010-css-styling-solution.md) for recommendations.
 
 ## Documentation Framework
 

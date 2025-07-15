@@ -23,6 +23,7 @@ Each topic includes:
 - [React Setup in 2025](./react-setup-2025.md) - Modern project setup with Vite, TypeScript, and SWC
 - [CSS Styling Solutions](./css-styling-solutions.md) - Comparing CSS Modules, Vanilla Extract, Tailwind, shadcn/ui
 - [Tailwind CSS Strategies](./tailwind-strategies.md) - Implementation patterns and community standards
+- [shadcn/ui](./shadcn-ui.md) - Copy-paste component library best practices and interview questions
 - [Code Quality Tools](./code-quality-tools.md) - Biome vs ESLint/Prettier, automation, and team adoption
 - [Testing Strategies](./testing-strategies.md) - Vitest, Playwright, and testing best practices
 - [Bundle Size & Performance](./bundle-size-performance.md) - Monitoring, budgets, and optimization

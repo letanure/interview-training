@@ -1,5 +1,6 @@
 import type React from "react";
 import { ButtonCssModules } from "./ButtonCssModules/ButtonCssModules";
+import { ButtonShadcn } from "./ButtonShadcn/ButtonShadcn";
 import { ButtonTailwind } from "./ButtonTailwind/ButtonTailwind";
 import { ButtonVanillaExtract } from "./ButtonVanillaExtract/ButtonVanillaExtract";
 
@@ -170,10 +171,57 @@ export const ButtonShowcase: React.FC = () => {
 				</div>
 			</section>
 
-			{/* Placeholder sections for other implementations */}
 			<section style={{ marginBottom: "3rem" }}>
 				<h2>shadcn/ui Implementation</h2>
-				<p style={{ color: "#666" }}>Coming next...</p>
+				<p style={{ color: "#666", marginBottom: "1rem" }}>
+					Copy-paste component library built on Radix UI + Tailwind CSS
+				</p>
+				<div
+					style={{
+						display: "flex",
+						gap: "1rem",
+						flexWrap: "wrap",
+						marginBottom: "1rem",
+					}}
+				>
+					<ButtonShadcn variant="primary" size="small">
+						Small Primary
+					</ButtonShadcn>
+					<ButtonShadcn variant="primary" size="medium">
+						Medium Primary
+					</ButtonShadcn>
+					<ButtonShadcn variant="primary" size="large">
+						Large Primary
+					</ButtonShadcn>
+				</div>
+
+				<div
+					style={{
+						display: "flex",
+						gap: "1rem",
+						flexWrap: "wrap",
+						marginBottom: "1rem",
+					}}
+				>
+					<ButtonShadcn variant="secondary" size="small">
+						Small Secondary
+					</ButtonShadcn>
+					<ButtonShadcn variant="secondary" size="medium">
+						Medium Secondary
+					</ButtonShadcn>
+					<ButtonShadcn variant="secondary" size="large">
+						Large Secondary
+					</ButtonShadcn>
+				</div>
+
+				<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+					<ButtonShadcn variant="primary" disabled>
+						Disabled Primary
+					</ButtonShadcn>
+					<ButtonShadcn variant="secondary" disabled>
+						Disabled Secondary
+					</ButtonShadcn>
+				</div>
 			</section>
 		</div>
 	);
