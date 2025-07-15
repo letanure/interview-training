@@ -10,15 +10,19 @@
 - [ ] **Environment Variables** - .env files and type-safe env handling
 - [ ] **Error Boundaries** - implementation and error handling strategy
 - [ ] **Performance Monitoring** - Core Web Vitals tracking and optimization
-- [ ] **Bundle Analyzer** - setup and optimization workflow
 - [ ] **CI/CD Pipeline** - GitHub Actions or similar automation
+- [ ] **Code Generators** - templates and scaffolding for components, hooks, pages, and tests
 
 ## Current Status
 
 - ✅ **Creating a React app in 2025** - document setup process, options, and decisions
 - ✅ **Code Quality & Formatting** - ESLint vs Prettier vs Biome analysis and decision
 - ✅ **Development Workflow** - pre-commit hooks, conventional commits, CI/CD
-- 🔄 **Testing Infrastructure** - framework selection, structure, coverage
+- ✅ **Testing Infrastructure** - unit testing (Vitest + React Testing Library), E2E (Playwright)
+- ✅ **Optional Docker Setup** - containerized development environment
+- ✅ **Dead Code Detection** - Knip for unused exports, dependencies, and files
+- ✅ **Bundle Size Budgets** - automated monitoring with CI enforcement and PR reporting
+- ✅ **NPM Scripts Naming Convention** - consistent category:action pattern for all scripts
 
 ## 2. React Basics
 

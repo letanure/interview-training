@@ -52,6 +52,7 @@ docker-compose up          # Subsequent runs
 - **E2E Testing**: Playwright
 - **Development**: Optional Docker setup
 - **Bundle Size**: 500KB budget with CI enforcement (PR checks will fail if exceeded)
+- **CSS/Styling**: Multiple solutions implemented for demonstration and practice
 
 ## Documentation
 

@@ -74,6 +74,14 @@ This directory contains detailed implementation guides for setting up a modern R
 - Community standards and industry practices
 - Systematic approach to script organization
 
+#### 2i. CSS/Styling Solution
+**[2i-css-styling-solution.md](2i-css-styling-solution.md)**
+- Modern CSS/styling approaches analysis and comparison
+- Multi-solution implementation strategy
+- CSS Modules, Tailwind CSS, and Styled Components evaluation
+- Performance, developer experience, and maintainability trade-offs
+- Interview preparation through practical multi-approach experience
+
 ## Document Structure
 
 Each journey document follows a consistent structure:

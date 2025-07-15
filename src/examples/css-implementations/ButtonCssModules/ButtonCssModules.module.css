@@ -1,0 +1,76 @@
+/* CSS Modules Button Implementation */
+.button {
+	align-items: center;
+	border-radius: 0.375rem;
+	border: none;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 500;
+	gap: 0.5rem;
+	justify-content: center;
+	line-height: 1.5;
+	outline: none;
+	padding: 0.75rem 1.5rem;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	user-select: none;
+}
+
+/* Variant styles */
+.primary {
+	background-color: #3b82f6;
+	color: white;
+}
+
+.primary:hover:not(:disabled) {
+	background-color: #2563eb;
+	transform: translateY(-1px);
+}
+
+.primary:active:not(:disabled) {
+	background-color: #1d4ed8;
+	transform: translateY(0);
+}
+
+.secondary {
+	background-color: #f3f4f6;
+	color: #374151;
+	border: 1px solid #d1d5db;
+}
+
+.secondary:hover:not(:disabled) {
+	background-color: #e5e7eb;
+	border-color: #9ca3af;
+}
+
+.secondary:active:not(:disabled) {
+	background-color: #d1d5db;
+}
+
+/* Size variants */
+.small {
+	padding: 0.5rem 1rem;
+	font-size: 0.875rem;
+	border-radius: 0.25rem;
+}
+
+.large {
+	padding: 1rem 2rem;
+	font-size: 1.125rem;
+	border-radius: 0.5rem;
+}
+
+/* States */
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+/* Focus styles for accessibility */
+.button:focus-visible {
+	outline: 2px solid #3b82f6;
+	outline-offset: 2px;
+}

@@ -15,6 +15,7 @@ This directory contains Architecture Decision Records for the React/Frontend int
 | [007](007-dead-code-detection-knip.md) | Dead Code Detection with Knip | Accepted | 2025-01-14 | Knip for unused code detection |
 | [008](008-bundle-size-budgets.md) | Bundle Size Budgets and Performance Monitoring | Accepted | 2025-01-14 | 500KB budget with CI enforcement |
 | [009](009-npm-scripts-naming-convention.md) | NPM Scripts Naming Convention | Accepted | 2025-01-15 | category:action pattern for consistent script naming |
+| [010](010-css-styling-solution.md) | CSS/Styling Solution | Accepted | 2025-01-15 | Multi-solution: Vanilla Extract + shadcn/ui + Tailwind v4 + CSS Modules |
 
 ## ADR Format
 
