@@ -6,12 +6,12 @@ This document provides guidelines for contributors to add new interview topics, 
 
 This project uses a **4-tier documentation system**. Before contributing, understand where your content belongs:
 
-| Doc Type | Purpose | Example |
-|----------|---------|---------|
-| **📋 [ADR](docs/adr/README.md)** | What was decided | "We chose Tailwind CSS over styled-components" |
-| **🗺️ [Implementation](docs/implementation/README.md)** | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
-| **📖 [Best Practices](docs/best-practices/)** | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`" |
-| **🎯 [Interview Guide](docs/interview-guide/README.md)** | How to talk about it | "When asked about CSS, say: 'I use utility-first...'" |
+| Doc Type                                              | Purpose                | Example                                                   |
+| ----------------------------------------------------- | ---------------------- | --------------------------------------------------------- |
+| **[ADR](docs/adr/README.md)**                         | What was decided       | "We chose Tailwind CSS over styled-components"            |
+| **[Implementation](docs/implementation/README.md)**   | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
+| **[Best Practices](docs/best-practices/)**            | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
+| **[Interview Guide](docs/interview-guide/README.md)** | How to talk about it   | "When asked about CSS, say: 'I use utility-first...'"     |
 
 ## Adding New Content
 
@@ -26,18 +26,22 @@ Add your new topic to `interview-topics.md`:
 ### 2. Choose the Right Documentation Type
 
 **For architectural decisions:**
+
 - Location: `docs/adr/`
 - Format: Follow ADR template with context, decision, alternatives, consequences
 
 **For implementation guides:**
+
 - Location: `docs/implementation/`
 - Format: Step-by-step with options considered and reasoning
 
 **For usage guidelines:**
+
 - Location: `docs/best-practices/`
 - Format: How-to guides with do's and don'ts
 
 **For interview preparation:**
+
 - Location: `docs/interview-guide/`
 - Format: Common questions with talking points and code examples
 
@@ -57,47 +61,59 @@ src/topics/[topic-name]/
 ### 4. Documentation Standards
 
 #### README.md Format
+
 ```markdown
 # Topic Name
 
 ## Overview
+
 Brief explanation of the concept
 
 ## Key Concepts
+
 - Bullet points of important ideas
 - Use clear, concise language
 
 ## When to Use
+
 Practical scenarios and use cases
 
 ## Common Pitfalls
+
 What to avoid and why
 
 ## Interview Relevance
+
 Why this topic matters in interviews
 ```
 
 #### Implementation.md Format
+
 ```markdown
 # Implementation Examples
 
 ## Basic Example
+
 Simple, clear code showing the concept
 
 ## Advanced Example
+
 More complex real-world usage
 
 ## Best Practices
+
 - Do this
 - Don't do that
 - Performance considerations
 ```
 
 #### Questions.md Format
-```markdown
+
+````markdown
 # Interview Questions & Answers
 
 ## Q1: Basic Question
+
 **Question:** What is [concept]?
 
 **Answer:** Clear, technical explanation that demonstrates understanding.
@@ -105,9 +121,11 @@ More complex real-world usage
 **Follow-up:** How would you implement this?
 
 **Code Example:**
+
 ```js
 // Working code that solves the problem
 ```
+````
 
 ## Development Workflow
 
@@ -120,11 +138,13 @@ More complex real-world usage
 ### Implementation Process
 
 1. **Create topic branch**
+
    ```bash
    git checkout -b topic/[topic-name]
    ```
 
 2. **Add topic to interview-topics.md**
+
    ```bash
    # Mark as in-progress
    - [x] **Your Topic** - Description (IN PROGRESS)
@@ -133,12 +153,14 @@ More complex real-world usage
 3. **Create implementation files** following the structure above
 
 4. **Write working code examples** that:
+
    - Compile without errors
    - Follow project coding standards
    - Include proper TypeScript types
    - Have corresponding tests
 
 5. **Test your implementation**
+
    ```bash
    npm run test
    npm run lint
@@ -152,23 +174,27 @@ More complex real-world usage
 ### Code Standards
 
 #### TypeScript
+
 - Use strict TypeScript settings
 - Provide proper type annotations
 - Avoid `any` types
 
 #### React Components
+
 - Use function components with hooks
 - Follow component folder structure
 - Include PropTypes or TypeScript interfaces
 - Add proper error handling
 
 #### Testing
+
 - Write tests for all components
 - Cover both happy path and edge cases
 - Use React Testing Library patterns
 - Follow existing test structure
 
 #### Code Style
+
 - Use Biome for formatting
 - Follow existing code patterns
 - Add meaningful comments for complex logic
@@ -191,16 +217,19 @@ Before submitting:
 ### Content Quality Standards
 
 #### Technical Accuracy
+
 - Explanations are correct and up-to-date
 - Code examples follow current best practices
 - Performance considerations are mentioned when relevant
 
 #### Interview Relevance
+
 - Content reflects real interview scenarios
 - Questions match actual interview difficulty
 - Answers demonstrate deep understanding
 
 #### Clarity and Completeness
+
 - Explanations are clear for different skill levels
 - Examples progress from simple to complex
 - Common mistakes and edge cases are covered
@@ -208,18 +237,21 @@ Before submitting:
 ## Topic Suggestions
 
 ### High Priority (Core React)
+
 - Component lifecycle and hooks equivalents
 - State management patterns
 - Performance optimization techniques
 - Testing strategies
 
 ### Medium Priority (Frontend Fundamentals)
+
 - JavaScript concepts (closures, prototypes, async)
 - Browser APIs and performance
 - CSS architecture and responsive design
 - Accessibility best practices
 
 ### Advanced Topics
+
 - Custom hooks design patterns
 - Advanced TypeScript patterns
 - Micro-frontends architecture
@@ -228,16 +260,19 @@ Before submitting:
 ## Getting Help
 
 ### Questions About Content
+
 - Check existing documentation first
 - Review similar topics for patterns
 - Ask specific questions about implementation
 
 ### Technical Issues
+
 - Ensure you're following the project setup in README.md
 - Check that all dependencies are installed
 - Review CLAUDE.md for project context
 
 ### Documentation Issues
+
 - Follow the established format and structure
 - Keep explanations concise but complete
 - Include practical examples

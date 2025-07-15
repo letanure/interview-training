@@ -9,6 +9,7 @@ This project serves as both a functional React application and a documentation r
 ## Quick Start
 
 ### Native Development (Recommended)
+
 ```bash
 # Install dependencies
 npm install
@@ -24,6 +25,7 @@ npm run lint
 ```
 
 ### Docker Development (Optional)
+
 ```bash
 # See journey/2e-optional-docker-setup.md for setup
 docker-compose up --build  # First time
@@ -37,10 +39,10 @@ docker-compose up          # Subsequent runs
 ├── CONTRIBUTING.md            # Guidelines for adding interview topics
 ├── interview-topics.md        # Complete list of React/Frontend topics
 ├── docs/                      # All documentation
-│   ├── 📋 adr/               # Architectural Decision Records
-│   ├── 🗺️ implementation/    # Step-by-step implementation guides
-│   ├── 📖 best-practices/    # Usage guidelines and how-to guides
-│   └── 🎯 interview-guide/   # Interview preparation materials
+│   ├── adr/               # Architectural Decision Records
+│   ├── implementation/    # Step-by-step implementation guides
+│   ├── best-practices/    # Usage guidelines and how-to guides
+│   └── interview-guide/   # Interview preparation materials
 ├── src/                       # React application source code
 └── e2e/                       # End-to-end test files
 ```
@@ -60,20 +62,20 @@ docker-compose up          # Subsequent runs
 
 This project uses a **clear 4-tier documentation system** to organize knowledge:
 
-| Doc Type | Purpose | Example |
-|----------|---------|---------|
-| **📋 [ADR](docs/adr/README.md)** | What was decided | "We chose Tailwind CSS over styled-components" |
-| **🗺️ [Implementation](docs/implementation/README.md)** | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
-| **📖 [Best Practices](docs/best-practices/)** | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`" |
-| **🎯 [Interview Guide](docs/interview-guide/README.md)** | How to talk about it | "When asked about CSS, say: 'I use utility-first...'" |
+| Doc Type                                              | Purpose                | Example                                                   |
+| ----------------------------------------------------- | ---------------------- | --------------------------------------------------------- |
+| **[ADR](docs/adr/README.md)**                         | What was decided       | "We chose Tailwind CSS over styled-components"            |
+| **[Implementation](docs/implementation/README.md)**   | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
+| **[Best Practices](docs/best-practices/)**            | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
+| **[Interview Guide](docs/interview-guide/README.md)** | How to talk about it   | "When asked about CSS, say: 'I use utility-first...'"     |
 
 ### Quick Navigation
 
-- **📋 [ADR](docs/adr/README.md)** - What's the problem, the decision made, minimal arguing
-- **🗺️ [Implementation Details](docs/implementation/README.md)** - All options, pros/cons, reasoning, step-by-step guides
-- **📖 [Best Practices](docs/best-practices/)** - What to do in this project, how to use tools, patterns to follow
-- **🎯 [Interview Guide](docs/interview-guide/README.md)** - Ready-to-use explanations and talking points for interviews
-- **📝 [Interview Topics List](interview-topics.md)** - Comprehensive React/Frontend topics to cover
+- **[ADR](docs/adr/README.md)** - What's the problem, the decision made, minimal arguing
+- **[Implementation Details](docs/implementation/README.md)** - All options, pros/cons, reasoning, step-by-step guides
+- **[Best Practices](docs/best-practices/)** - What to do in this project, how to use tools, patterns to follow
+- **[Interview Guide](docs/interview-guide/README.md)** - Ready-to-use explanations and talking points for interviews
+- **[Interview Topics List](interview-topics.md)** - Comprehensive React/Frontend topics to cover
 
 ## Commands Reference
 
@@ -82,12 +84,12 @@ This project uses a **clear 4-tier documentation system** to organize knowledge:
 npm install                              # Native
 # Docker doesn't need separate install
 
-# Start development server  
+# Start development server
 npm run dev                              # Native
 docker-compose up                        # Docker
 
 # Run tests
-npm run test                             # Native  
+npm run test                             # Native
 docker-compose exec react-app npm test  # Docker
 
 # Code quality checks
@@ -110,17 +112,18 @@ npm run size:info                        # Show file sizes in terminal
 
 ## Learning Path
 
-1. **📋 Review ADRs** - Learn what decisions were made and basic context
-2. **🗺️ Read Journey docs** - Understand the full reasoning and implementation details  
-3. **📖 Study Best Practices** - Learn how to use tools and patterns properly in this project
-4. **🎯 Practice Interview Responses** - Use the interview guide for talking points
-5. **💻 Implement Features** - Add new components following established patterns
+1. **Review ADRs** - Learn what decisions were made and basic context
+2. **Read Journey docs** - Understand the full reasoning and implementation details
+3. **Study Best Practices** - Learn how to use tools and patterns properly in this project
+4. **Practice Interview Responses** - Use the interview guide for talking points
+5. **Implement Features** - Add new components following established patterns
 
 This path takes you from **decisions → reasoning → usage → communication → practice**.
 
 ## Project Purpose
 
 This project demonstrates:
+
 - **Modern React development** practices and tooling
 - **Professional workflow** setup and automation
 - **Architectural thinking** through documented decisions
