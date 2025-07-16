@@ -22,7 +22,7 @@ interface HeaderProps {
 
 export function Header({ title = "Home", breadcrumbs }: HeaderProps) {
 	const defaultBreadcrumbs = [
-		{ label: "React Training", href: route(ROUTE_NAMES.HOME) },
+		{ label: "Development Practices", href: route(ROUTE_NAMES.HOME) },
 		{ label: title },
 	];
 
