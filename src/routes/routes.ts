@@ -1,18 +1,18 @@
+import { CssOverviewPage } from "@pages/css/CssOverviewPage";
+import { ModulesPage } from "@pages/css/ModulesPage";
+import { ShadcnPage } from "@pages/css/ShadcnPage";
+import { TailwindPage } from "@pages/css/TailwindPage";
+import { VanillaExtractPage } from "@pages/css/VanillaExtractPage";
+import { HomePage } from "@pages/HomePage";
+import { BuildToolPage } from "@pages/setup/BuildToolPage";
+import { BundleSizePage } from "@pages/setup/BundleSizePage";
+import { CodeQualityPage } from "@pages/setup/CodeQualityPage";
+import { DevEnvPage } from "@pages/setup/DevEnvPage";
+import { GitHooksPage } from "@pages/setup/GitHooksPage";
+import { SetupOverviewPage } from "@pages/setup/SetupOverviewPage";
+import { TestingPage } from "@pages/setup/TestingPage";
 import { Package, Palette } from "lucide-react";
 import type { ComponentType } from "react";
-import { CssOverviewPage } from "@/pages/css/CssOverviewPage";
-import { ModulesPage } from "@/pages/css/ModulesPage";
-import { ShadcnPage } from "@/pages/css/ShadcnPage";
-import { TailwindPage } from "@/pages/css/TailwindPage";
-import { VanillaExtractPage } from "@/pages/css/VanillaExtractPage";
-import { HomePage } from "@/pages/HomePage";
-import { BuildToolPage } from "@/pages/setup/BuildToolPage";
-import { BundleSizePage } from "@/pages/setup/BundleSizePage";
-import { CodeQualityPage } from "@/pages/setup/CodeQualityPage";
-import { DevEnvPage } from "@/pages/setup/DevEnvPage";
-import { GitHooksPage } from "@/pages/setup/GitHooksPage";
-import { SetupOverviewPage } from "@/pages/setup/SetupOverviewPage";
-import { TestingPage } from "@/pages/setup/TestingPage";
 
 export interface RouteConfig {
 	name: string;

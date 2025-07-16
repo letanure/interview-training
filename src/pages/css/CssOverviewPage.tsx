@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
 import {
 	Card,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "@/components/ui/card";
-import { ROUTE_NAMES, route } from "@/routes/routes";
+} from "@components/ui/card";
+import { ROUTE_NAMES, route } from "@routes/routes";
+import { Link } from "react-router-dom";
 
 export function CssOverviewPage() {
 	return (

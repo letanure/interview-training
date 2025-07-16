@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -7,10 +5,12 @@ import {
 	BreadcrumbList,
 	BreadcrumbPage,
 	BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import { SidebarTrigger } from "@/components/ui/sidebar";
-import { ROUTE_NAMES, route } from "@/routes/routes";
+} from "@components/ui/breadcrumb";
+import { Separator } from "@components/ui/separator";
+import { SidebarTrigger } from "@components/ui/sidebar";
+import { ROUTE_NAMES, route } from "@routes/routes";
+import React from "react";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
 	title?: string;

@@ -1,11 +1,8 @@
-import { ChevronRight, Home } from "lucide-react";
-import { Link } from "react-router-dom";
-
 import {
 	Collapsible,
 	CollapsibleContent,
 	CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+} from "@components/ui/collapsible";
 import {
 	Sidebar,
 	SidebarContent,
@@ -19,8 +16,10 @@ import {
 	SidebarMenuSub,
 	SidebarMenuSubButton,
 	SidebarMenuSubItem,
-} from "@/components/ui/sidebar";
-import { navigationSections } from "@/routes/routes";
+} from "@components/ui/sidebar";
+import { navigationSections } from "@routes/routes";
+import { ChevronRight, Home } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Navigation items (not topics)
 const navigationItems = [

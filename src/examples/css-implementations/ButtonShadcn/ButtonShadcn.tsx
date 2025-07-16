@@ -1,5 +1,5 @@
+import { Button } from "@components/ui/button";
 import type React from "react";
-import { Button } from "@/components/ui/button";
 
 interface ButtonProps {
 	variant?: "primary" | "secondary";
