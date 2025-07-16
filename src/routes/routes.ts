@@ -1,41 +1,131 @@
-// Architecture & Setup
-import { ArchitectureOverviewPage } from "@pages/architecture/ArchitectureOverviewPage";
-import { FileOrganizationPage } from "@pages/architecture/FileOrganizationPage";
-import { PathAliasesPage } from "@pages/architecture/PathAliasesPage";
-
-// CSS Styling
-import { CssOverviewPage } from "@pages/css/CssOverviewPage";
-import { ModulesPage } from "@pages/css/ModulesPage";
-import { ShadcnPage } from "@pages/css/ShadcnPage";
-import { TailwindPage } from "@pages/css/TailwindPage";
-import { VanillaExtractPage } from "@pages/css/VanillaExtractPage";
-import { DocOrganizationPage } from "@pages/documentation/DocOrganizationPage";
-// Documentation
-import { DocumentationOverviewPage } from "@pages/documentation/DocumentationOverviewPage";
-import { NamingConventionsPage } from "@pages/documentation/NamingConventionsPage";
-
-// Frontend Implementation
-import { FrontendOverviewPage } from "@pages/frontend/FrontendOverviewPage";
-import { LayoutArchitecturePage } from "@pages/frontend/LayoutArchitecturePage";
-import { RoutingPage } from "@pages/frontend/RoutingPage";
-
-// Home
+// Home - Keep direct import for immediate loading
 import { HomePage } from "@pages/HomePage";
+import { lazy } from "react";
 
-// Performance
-import { PerformanceOverviewPage } from "@pages/performance/PerformanceOverviewPage";
+// Architecture & Setup - Lazy loaded
+const ArchitectureOverviewPage = lazy(() =>
+	import("@pages/architecture/ArchitectureOverviewPage").then((m) => ({
+		default: m.ArchitectureOverviewPage,
+	})),
+);
+const FileOrganizationPage = lazy(() =>
+	import("@pages/architecture/FileOrganizationPage").then((m) => ({
+		default: m.FileOrganizationPage,
+	})),
+);
+const PathAliasesPage = lazy(() =>
+	import("@pages/architecture/PathAliasesPage").then((m) => ({
+		default: m.PathAliasesPage,
+	})),
+);
 
-// Setup (legacy - now under workflow)
-import { BuildToolPage } from "@pages/setup/BuildToolPage";
-import { BundleSizePage } from "@pages/setup/BundleSizePage";
-import { CodeQualityPage } from "@pages/setup/CodeQualityPage";
-import { DevEnvPage } from "@pages/setup/DevEnvPage";
-import { GitHooksPage } from "@pages/setup/GitHooksPage";
-import { SetupOverviewPage } from "@pages/setup/SetupOverviewPage";
-import { TestingPage } from "@pages/setup/TestingPage";
+// CSS Styling - Lazy loaded
+const CssOverviewPage = lazy(() =>
+	import("@pages/css/CssOverviewPage").then((m) => ({
+		default: m.CssOverviewPage,
+	})),
+);
+const ModulesPage = lazy(() =>
+	import("@pages/css/ModulesPage").then((m) => ({ default: m.ModulesPage })),
+);
+const ShadcnPage = lazy(() =>
+	import("@pages/css/ShadcnPage").then((m) => ({ default: m.ShadcnPage })),
+);
+const TailwindPage = lazy(() =>
+	import("@pages/css/TailwindPage").then((m) => ({ default: m.TailwindPage })),
+);
+const VanillaExtractPage = lazy(() =>
+	import("@pages/css/VanillaExtractPage").then((m) => ({
+		default: m.VanillaExtractPage,
+	})),
+);
 
-// Workflow
-import { WorkflowOverviewPage } from "@pages/workflow/WorkflowOverviewPage";
+// Documentation - Lazy loaded
+const DocumentationOverviewPage = lazy(() =>
+	import("@pages/documentation/DocumentationOverviewPage").then((m) => ({
+		default: m.DocumentationOverviewPage,
+	})),
+);
+const DocOrganizationPage = lazy(() =>
+	import("@pages/documentation/DocOrganizationPage").then((m) => ({
+		default: m.DocOrganizationPage,
+	})),
+);
+const NamingConventionsPage = lazy(() =>
+	import("@pages/documentation/NamingConventionsPage").then((m) => ({
+		default: m.NamingConventionsPage,
+	})),
+);
+
+// Frontend Implementation - Lazy loaded
+const FrontendOverviewPage = lazy(() =>
+	import("@pages/frontend/FrontendOverviewPage").then((m) => ({
+		default: m.FrontendOverviewPage,
+	})),
+);
+const LayoutArchitecturePage = lazy(() =>
+	import("@pages/frontend/LayoutArchitecturePage").then((m) => ({
+		default: m.LayoutArchitecturePage,
+	})),
+);
+const RoutingPage = lazy(() =>
+	import("@pages/frontend/RoutingPage").then((m) => ({
+		default: m.RoutingPage,
+	})),
+);
+
+// Performance - Lazy loaded
+const PerformanceOverviewPage = lazy(() =>
+	import("@pages/performance/PerformanceOverviewPage").then((m) => ({
+		default: m.PerformanceOverviewPage,
+	})),
+);
+const ReactPerformancePage = lazy(() =>
+	import("@pages/performance/ReactPerformancePage").then((m) => ({
+		default: m.ReactPerformancePage,
+	})),
+);
+
+// Setup (legacy - now under workflow) - Lazy loaded
+const BuildToolPage = lazy(() =>
+	import("@pages/setup/BuildToolPage").then((m) => ({
+		default: m.BuildToolPage,
+	})),
+);
+const BundleSizePage = lazy(() =>
+	import("@pages/setup/BundleSizePage").then((m) => ({
+		default: m.BundleSizePage,
+	})),
+);
+const CodeQualityPage = lazy(() =>
+	import("@pages/setup/CodeQualityPage").then((m) => ({
+		default: m.CodeQualityPage,
+	})),
+);
+const DevEnvPage = lazy(() =>
+	import("@pages/setup/DevEnvPage").then((m) => ({ default: m.DevEnvPage })),
+);
+const GitHooksPage = lazy(() =>
+	import("@pages/setup/GitHooksPage").then((m) => ({
+		default: m.GitHooksPage,
+	})),
+);
+const SetupOverviewPage = lazy(() =>
+	import("@pages/setup/SetupOverviewPage").then((m) => ({
+		default: m.SetupOverviewPage,
+	})),
+);
+const TestingPage = lazy(() =>
+	import("@pages/setup/TestingPage").then((m) => ({ default: m.TestingPage })),
+);
+
+// Workflow - Lazy loaded
+const WorkflowOverviewPage = lazy(() =>
+	import("@pages/workflow/WorkflowOverviewPage").then((m) => ({
+		default: m.WorkflowOverviewPage,
+	})),
+);
+
 import { BarChart3, BookOpen, Palette, Settings, Workflow } from "lucide-react";
 import type { ComponentType } from "react";
 
@@ -82,6 +172,7 @@ export const ROUTE_NAMES = {
 	// Performance & Monitoring
 	PERFORMANCE: "performance",
 	BUNDLE_SIZE: "bundleSize",
+	REACT_PERFORMANCE: "reactPerformance",
 	// Documentation Strategy
 	DOCUMENTATION: "documentation",
 	DOC_ORGANIZATION: "docOrganization",
@@ -205,6 +296,12 @@ export const routes: RouteConfig[] = [
 				path: "bundle-size",
 				component: BundleSizePage,
 				title: "Bundle Size Budgets",
+			},
+			{
+				name: ROUTE_NAMES.REACT_PERFORMANCE,
+				path: "react-performance",
+				component: ReactPerformancePage,
+				title: "React Code Splitting",
 			},
 		],
 	},

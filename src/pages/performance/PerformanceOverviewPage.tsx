@@ -31,6 +31,22 @@ export function PerformanceOverviewPage() {
 						</CardDescription>
 					</CardHeader>
 				</Card>
+
+				<Card className="hover:bg-muted/50 transition-colors">
+					<CardHeader>
+						<CardTitle>
+							<Link
+								to={route(ROUTE_NAMES.REACT_PERFORMANCE)}
+								className="hover:underline"
+							>
+								React Code Splitting
+							</Link>
+						</CardTitle>
+						<CardDescription>
+							Route-based code splitting and lazy loading strategies.
+						</CardDescription>
+					</CardHeader>
+				</Card>
 			</div>
 		</div>
 	);
