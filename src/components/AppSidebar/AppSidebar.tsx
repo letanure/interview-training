@@ -1,4 +1,5 @@
-import { ChevronRight, Home, Package, Palette } from "lucide-react";
+import { ChevronRight, Home } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import {
 	Collapsible,
@@ -19,41 +20,14 @@ import {
 	SidebarMenuSubButton,
 	SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { navigationSections } from "@/routes/routes";
 
 // Navigation items (not topics)
 const navigationItems = [
 	{
 		title: "Home",
-		url: "#",
+		url: "/",
 		icon: Home,
-	},
-];
-
-// Topic items
-const topicItems = [
-	{
-		title: "Project Setup",
-		url: "#setup",
-		icon: Package,
-		subitems: [
-			{ title: "Build Tool", url: "#setup/build-tool" },
-			{ title: "Code Quality", url: "#setup/code-quality" },
-			{ title: "Git Hooks", url: "#setup/git-hooks" },
-			{ title: "Testing", url: "#setup/testing" },
-			{ title: "Bundle Size", url: "#setup/bundle-size" },
-			{ title: "Development Environment", url: "#setup/dev-env" },
-		],
-	},
-	{
-		title: "CSS Styling",
-		url: "#css",
-		icon: Palette,
-		subitems: [
-			{ title: "CSS Modules", url: "#css/modules" },
-			{ title: "Vanilla Extract", url: "#css/vanilla-extract" },
-			{ title: "Tailwind CSS", url: "#css/tailwind" },
-			{ title: "shadcn/ui", url: "#css/shadcn" },
-		],
 	},
 ];
 
@@ -62,7 +36,7 @@ export function AppSidebar() {
 		<Sidebar>
 			<SidebarHeader>
 				<div className="flex flex-col space-y-1 p-2">
-					<h1 className="text-lg font-semibold">React Interview Training</h1>
+					<h1 className="text-lg font-semibold">React Training</h1>
 					<p className="text-sm text-muted-foreground">Frontend 2025</p>
 				</div>
 			</SidebarHeader>
@@ -74,10 +48,10 @@ export function AppSidebar() {
 							{navigationItems.map((item) => (
 								<SidebarMenuItem key={item.title}>
 									<SidebarMenuButton asChild>
-										<a href={item.url}>
+										<Link to={item.url}>
 											{item.icon && <item.icon />}
 											<span>{item.title}</span>
-										</a>
+										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>
 							))}
@@ -90,7 +64,7 @@ export function AppSidebar() {
 					<SidebarGroupLabel>Topics</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
-							{topicItems.map((item) => (
+							{navigationSections.map((item) => (
 								<SidebarMenuItem key={item.title}>
 									{item.subitems ? (
 										<Collapsible className="group/collapsible">
@@ -106,9 +80,9 @@ export function AppSidebar() {
 													{item.subitems.map((subitem) => (
 														<SidebarMenuSubItem key={subitem.title}>
 															<SidebarMenuSubButton asChild>
-																<a href={subitem.url}>
+																<Link to={`${item.url}/${subitem.path}`}>
 																	<span>{subitem.title}</span>
-																</a>
+																</Link>
 															</SidebarMenuSubButton>
 														</SidebarMenuSubItem>
 													))}
@@ -117,10 +91,10 @@ export function AppSidebar() {
 										</Collapsible>
 									) : (
 										<SidebarMenuButton asChild>
-											<a href={item.url}>
+											<Link to={item.url}>
 												{item.icon && <item.icon />}
 												<span>{item.title}</span>
-											</a>
+											</Link>
 										</SidebarMenuButton>
 									)}
 								</SidebarMenuItem>

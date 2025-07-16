@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { route } from "@/routes/routes";
 
 interface HeaderProps {
 	title?: string;
@@ -20,7 +22,7 @@ interface HeaderProps {
 
 export function Header({ title = "Home", breadcrumbs }: HeaderProps) {
 	const defaultBreadcrumbs = [
-		{ label: "React Interview Training", href: "#" },
+		{ label: "React Training", href: route("home") },
 		{ label: title },
 	];
 
@@ -42,8 +44,8 @@ export function Header({ title = "Home", breadcrumbs }: HeaderProps) {
 									className={index === 0 ? "hidden md:block" : ""}
 								>
 									{item.href ? (
-										<BreadcrumbLink href={item.href}>
-											{item.label}
+										<BreadcrumbLink asChild>
+											<Link to={item.href}>{item.label}</Link>
 										</BreadcrumbLink>
 									) : (
 										<BreadcrumbPage>{item.label}</BreadcrumbPage>
