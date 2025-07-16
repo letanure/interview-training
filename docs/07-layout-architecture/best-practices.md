@@ -309,6 +309,6 @@ function App() {
 ```
 
 ## Related Documentation
-- [ADR-012: Layout Architecture Pattern](../adr/012-layout-architecture-pattern.md)
-- [shadcn/ui Best Practices](./shadcn-ui.md)
-- [Tailwind Best Practices](./tailwind-best-practices.md)
+- [ADR-012: Layout Architecture Pattern](./adr.md)
+- [shadcn/ui Best Practices](../03-css-styling/best-practices.md)
+- [Tailwind Best Practices](../03-css-styling/best-practices.md)

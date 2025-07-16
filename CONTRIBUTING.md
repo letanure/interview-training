@@ -8,10 +8,10 @@ This project uses a **4-tier documentation system**. Before contributing, unders
 
 | Doc Type                                              | Purpose                | Example                                                   |
 | ----------------------------------------------------- | ---------------------- | --------------------------------------------------------- |
-| **[ADR](docs/adr/README.md)**                         | What was decided       | "We chose Tailwind CSS over styled-components"            |
-| **[Implementation](docs/implementation/README.md)**   | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
-| **[Best Practices](docs/best-practices/)**            | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
-| **[Interview Guide](docs/interview-guide/README.md)** | How to talk about it   | "When asked about CSS, say: 'I use utility-first...'"     |
+| **[ADR](docs/01-project-setup/adr.md)**                         | What was decided       | "We chose Tailwind CSS over styled-components"            |
+| **[Implementation](docs/01-project-setup/implementation.md)**   | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
+| **[Best Practices](docs/03-css-styling/best-practices.md)**            | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
+| **[Interview Guide](docs/01-project-setup/interview-guide.md)** | How to talk about it   | "When asked about CSS, say: 'I use utility-first...'"     |
 
 ## Adding New Content
 
@@ -27,22 +27,22 @@ Add your new topic to `interview-topics.md`:
 
 **For architectural decisions:**
 
-- Location: `docs/adr/`
+- Location: `docs/[topic-number]-[topic-name]/adr.md`
 - Format: Follow ADR template with context, decision, alternatives, consequences
 
 **For implementation guides:**
 
-- Location: `docs/implementation/`
+- Location: `docs/[topic-number]-[topic-name]/implementation.md`
 - Format: Step-by-step with options considered and reasoning
 
 **For usage guidelines:**
 
-- Location: `docs/best-practices/`
+- Location: `docs/[topic-number]-[topic-name]/best-practices.md`
 - Format: How-to guides with do's and don'ts
 
 **For interview preparation:**
 
-- Location: `docs/interview-guide/`
+- Location: `docs/[topic-number]-[topic-name]/interview-guide.md`
 - Format: Common questions with talking points and code examples
 
 ### 3. Implementation Structure
@@ -293,11 +293,11 @@ interview-training/
 ├── README.md                   # Project overview
 ├── CONTRIBUTING.md            # This file
 ├── interview-topics.md        # Master list of topics
-├── docs/                      # All documentation
-│   ├── adr/                  # Architectural Decision Records
-│   ├── implementation/       # Step-by-step implementation guides
-│   ├── best-practices/       # Usage guidelines and how-to guides
-│   └── interview-guide/      # Interview preparation materials
+├── docs/                      # All documentation (topic-based)
+│   ├── 01-project-setup/     # React setup with Vite, TypeScript
+│   ├── 02-code-quality/      # Biome, linting, formatting
+│   ├── 03-css-styling/       # CSS solutions comparison
+│   └── [topic-folders]/      # Each contains: adr.md, implementation.md, etc.
 ├── src/
 │   ├── examples/            # Working code examples
 │   └── components/          # Reusable components

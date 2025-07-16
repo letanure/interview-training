@@ -38,11 +38,11 @@ docker-compose up          # Subsequent runs
 ├── README.md              # This file
 ├── CONTRIBUTING.md        # Guidelines for adding interview topics
 ├── interview-topics.md    # Complete list of React/Frontend topics
-├── docs/                  # All documentation
-│   ├── adr/               # Architectural Decision Records
-│   ├── implementation/    # Step-by-step implementation guides
-│   ├── best-practices/    # Usage guidelines and how-to guides
-│   └── interview-guide/   # Interview preparation materials
+├── docs/                  # All documentation (organized by topic)
+│   ├── 01-project-setup/  # React setup with Vite, TypeScript
+│   ├── 02-code-quality/   # Biome, linting, formatting
+│   ├── 03-css-styling/    # CSS solutions comparison
+│   └── [topic-folders]/   # Each contains: adr.md, implementation.md, etc.
 ├── src/                   # React application source code
 └── e2e/                   # End-to-end test files
 ```
@@ -58,7 +58,7 @@ docker-compose up          # Subsequent runs
 - **Bundle Size**: 500KB budget with CI enforcement (PR checks will fail if exceeded)
 - **CSS/Styling**: Multiple solutions for demonstration - CSS Modules, Vanilla Extract, Tailwind CSS v4, shadcn/ui
 
-> **Note**: This is a demo/interview training project. In production, choose one primary CSS solution. We implement multiple approaches to demonstrate trade-offs and interview preparation. See [CSS Styling Comparison](docs/adr/010-css-styling-solution.md) for recommendations.
+> **Note**: This is a demo/interview training project. In production, choose one primary CSS solution. We implement multiple approaches to demonstrate trade-offs and interview preparation. See [CSS Styling Comparison](docs/03-css-styling/adr.md) for recommendations.
 
 ## Documentation Framework
 
@@ -66,17 +66,15 @@ This project uses a **clear 4-tier documentation system** to organize knowledge:
 
 | Doc Type                                              | Purpose                | Example                                                   |
 | ----------------------------------------------------- | ---------------------- | --------------------------------------------------------- |
-| **[ADR](docs/adr/README.md)**                         | What was decided       | "We chose Tailwind CSS over styled-components"            |
-| **[Implementation](docs/implementation/README.md)**   | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
-| **[Best Practices](docs/best-practices/)**            | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
-| **[Interview Guide](docs/interview-guide/README.md)** | How to talk about it   | "When asked about CSS, say: 'I use utility-first...'"     |
+| **[ADR](docs/01-project-setup/adr.md)**                         | What was decided       | "We chose Tailwind CSS over styled-components"            |
+| **[Implementation](docs/01-project-setup/implementation.md)**   | Why and how we decided | "Here are 4 CSS options, pros/cons, implementation steps" |
+| **[Best Practices](docs/03-css-styling/best-practices.md)**            | How to use it properly | "Use `cn()` for conditional classes, avoid `@apply`"      |
+| **[Interview Guide](docs/01-project-setup/interview-guide.md)** | How to talk about it   | "When asked about CSS, say: 'I use utility-first...'"     |
 
 ### Quick Navigation
 
-- **[ADR](docs/adr/README.md)** - What's the problem, the decision made, minimal arguing
-- **[Implementation Details](docs/implementation/README.md)** - All options, pros/cons, reasoning, step-by-step guides
-- **[Best Practices](docs/best-practices/)** - What to do in this project, how to use tools, patterns to follow
-- **[Interview Guide](docs/interview-guide/README.md)** - Ready-to-use explanations and talking points for interviews
+- **[Documentation Overview](docs/README.md)** - Topic-based organization with all 4 document types
+- **[Topic Folders](docs/)** - Each topic contains ADR, implementation, best practices, interview guide
 - **[Interview Topics List](interview-topics.md)** - Comprehensive React/Frontend topics to cover
 
 ## Commands Reference

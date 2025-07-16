@@ -13,15 +13,33 @@ Multiple types of documentation need clear organization for team navigation and 
 - Non-standard GitHub project structure making navigation harder
 
 ## Decision
-Organize all documentation under a single `docs/` folder with purpose-based subfolders:
+Organize all documentation under a single `docs/` folder with topic-based subfolders containing the 4 document types:
 
 ```
 docs/
-├── decisions/          # ADRs (what was decided)
-├── implementation/     # Journey docs (how we decided)  
-├── best-practices/     # Usage guides (how to use)
-└── interview-guide/    # Communication (how to talk about it)
+├── 01-project-setup/
+│   ├── adr.md              # What was decided
+│   ├── implementation.md   # How we implemented
+│   ├── best-practices.md   # How to use
+│   └── interview-guide.md  # How to discuss
+├── 02-code-quality/
+│   ├── adr.md
+│   ├── implementation.md
+│   ├── best-practices.md
+│   └── interview-guide.md
+├── 03-css-styling/
+│   ├── adr.md
+│   ├── implementation.md
+│   ├── best-practices.md
+│   └── interview-guide.md
+└── [topic-number]-[topic-name]/
+    ├── adr.md
+    ├── implementation.md
+    ├── best-practices.md    # (optional)
+    └── interview-guide.md
 ```
+
+**Rationale**: Each architectural decision generates related documentation across all 4 types. Topic-based folders keep related documents together while maintaining clear document type boundaries.
 
 **Implementation Details:** See `docs/implementation/2k-documentation-organization.md`
 
@@ -38,18 +56,38 @@ docs/
 - Non-standard GitHub structure
 - Cognitive load of remembering 4+ top-level folders
 
-### Option 2: Single docs/ Folder (Chosen)
+### Option 2: Topic-Based Folders (Chosen)
 **Pros:**
 - Single entry point for all documentation
-- Conventional GitHub structure
-- Easier contributor onboarding
-- Maintains separation of concerns with subfolders
+- Related documents grouped together by topic
+- Clear topic boundaries prevent document scatter
+- Scales naturally as topics are added
+- Maintains 4-type document boundaries within each topic
 
 **Cons:**
 - Requires file path updates
-- One level deeper for navigation
+- Two levels deeper for navigation
+- Need to decide topic numbering/naming
 
-### Option 3: Minimal Approach (README-only)
+### Option 3: Purpose-Based Folders
+```
+docs/
+├── adr/
+├── implementation/
+├── best-practices/
+└── interview-guide/
+```
+**Pros:**
+- Clear separation by document type
+- Easy to find all ADRs or all best practices
+- Familiar structure for documentation
+
+**Cons:**
+- Related topic documents scattered across folders
+- Hard to find all docs about one topic
+- No clear topic boundaries
+
+### Option 4: Minimal Approach (README-only)
 **Pros:**
 - Very simple structure
 - No complex organization
