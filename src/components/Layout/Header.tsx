@@ -8,25 +8,13 @@ import {
 } from "@components/ui/breadcrumb";
 import { Separator } from "@components/ui/separator";
 import { SidebarTrigger } from "@components/ui/sidebar";
-import { ROUTE_NAMES, route } from "@routes/routes";
+import { buildBreadcrumbs } from "@routes/routes";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-interface HeaderProps {
-	title?: string;
-	breadcrumbs?: Array<{
-		label: string;
-		href?: string;
-	}>;
-}
-
-export function Header({ title = "Home", breadcrumbs }: HeaderProps) {
-	const defaultBreadcrumbs = [
-		{ label: "Development Practices", href: route(ROUTE_NAMES.HOME) },
-		{ label: title },
-	];
-
-	const items = breadcrumbs || defaultBreadcrumbs;
+export function Header() {
+	const location = useLocation();
+	const breadcrumbs = buildBreadcrumbs(location.pathname);
 
 	return (
 		<header className="flex h-16 shrink-0 items-center gap-2 border-b">
@@ -35,7 +23,7 @@ export function Header({ title = "Home", breadcrumbs }: HeaderProps) {
 				<Separator orientation="vertical" className="mr-2 h-4" />
 				<Breadcrumb>
 					<BreadcrumbList>
-						{items.map((item, index) => (
+						{breadcrumbs.map((item, index) => (
 							<React.Fragment key={item.label}>
 								{index > 0 && (
 									<BreadcrumbSeparator className="hidden md:block" />

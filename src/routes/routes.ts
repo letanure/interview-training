@@ -336,3 +336,72 @@ export const route = (name: RouteName): string => {
 
 	return found.path;
 };
+
+// Build breadcrumbs based on current route path
+export const buildBreadcrumbs = (
+	currentPath: string,
+): Array<{ label: string; href?: string }> => {
+	const breadcrumbs: Array<{ label: string; href?: string }> = [
+		{ label: "Development Practices", href: "/" },
+	];
+
+	// Handle home route
+	if (currentPath === "/") {
+		return [{ label: "Development Practices" }];
+	}
+
+	// Find the matching route and its parents
+	const findRouteWithParents = (
+		routes: RouteConfig[],
+		targetPath: string,
+		parents: RouteConfig[] = [],
+	): RouteConfig[] | null => {
+		for (const route of routes) {
+			const fullPath = route.path.startsWith("/")
+				? route.path
+				: `${parents[parents.length - 1]?.path}/${route.path}`;
+
+			if (fullPath === targetPath) {
+				return [...parents, route];
+			}
+
+			if (route.children) {
+				const result = findRouteWithParents(route.children, targetPath, [
+					...parents,
+					route,
+				]);
+				if (result) return result;
+			}
+		}
+		return null;
+	};
+
+	const routeHierarchy = findRouteWithParents(routes, currentPath);
+
+	if (routeHierarchy) {
+		// Build breadcrumbs from route hierarchy
+		for (let i = 0; i < routeHierarchy.length; i++) {
+			const routeItem = routeHierarchy[i];
+			if (!routeItem) continue;
+
+			const isLast = i === routeHierarchy.length - 1;
+
+			// Build the full path for this route
+			let fullPath = "";
+			if (routeItem.path.startsWith("/")) {
+				fullPath = routeItem.path;
+			} else {
+				// For child routes, build the full path from parents
+				const parentPath = routeHierarchy[i - 1]?.path || "";
+				fullPath = `${parentPath}/${routeItem.path}`;
+			}
+
+			breadcrumbs.push({
+				label: routeItem.title,
+				href: isLast ? undefined : fullPath,
+			});
+		}
+	}
+
+	return breadcrumbs;
+};
