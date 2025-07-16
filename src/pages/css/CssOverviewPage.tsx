@@ -5,7 +5,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { route } from "@/routes/routes";
+import { ROUTE_NAMES, route } from "@/routes/routes";
 
 export function CssOverviewPage() {
 	return (
@@ -19,7 +19,10 @@ export function CssOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("cssModules")} className="hover:underline">
+							<Link
+								to={route(ROUTE_NAMES.CSS_MODULES)}
+								className="hover:underline"
+							>
 								CSS Modules
 							</Link>
 						</CardTitle>
@@ -32,7 +35,10 @@ export function CssOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("vanillaExtract")} className="hover:underline">
+							<Link
+								to={route(ROUTE_NAMES.VANILLA_EXTRACT)}
+								className="hover:underline"
+							>
 								Vanilla Extract
 							</Link>
 						</CardTitle>
@@ -45,7 +51,10 @@ export function CssOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("tailwind")} className="hover:underline">
+							<Link
+								to={route(ROUTE_NAMES.TAILWIND)}
+								className="hover:underline"
+							>
 								Tailwind CSS
 							</Link>
 						</CardTitle>
@@ -58,7 +67,7 @@ export function CssOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("shadcn")} className="hover:underline">
+							<Link to={route(ROUTE_NAMES.SHADCN)} className="hover:underline">
 								shadcn/ui
 							</Link>
 						</CardTitle>

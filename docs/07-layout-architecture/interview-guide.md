@@ -163,13 +163,12 @@ test('breadcrumbs update based on props', () => {
 ### **File Organization Rationale**
 ```
 src/
-├── app/layout.tsx          # "Why app/ instead of components/?"
-├── components/Layout/      # "Reusable layout pieces"
+├── components/Layout/      # "Layout components (RootLayout, Header, etc.)"
 ├── pages/                  # "Pure content components"
 ```
 
 **Interview Discussion:**
-> "I follow Next.js conventions because they're widely recognized. The `app/` directory signals this is application-level configuration, not a reusable component."
+> "I keep all layout components in `components/Layout/` to group related functionality together. This makes it clear where to find layout-related code while keeping the folder structure simple and logical."
 
 ### **Naming Conventions**
 **Topic-focused vs Tool-focused:**

@@ -79,12 +79,12 @@ const badRoutes = [
 
 ```typescript
 // Good - Type-safe named routes
-<Link to={route("buildTool")}>Build Tool</Link>
-<Link to={route("home")}>Home</Link>
+<Link to={route(ROUTE_NAMES.BUILD_TOOL)}>Build Tool</Link>
+<Link to={route(ROUTE_NAMES.HOME)}>Home</Link>
 
 // Navigation
 const navigate = useNavigate();
-navigate(route("projectSetup"));
+navigate(route(ROUTE_NAMES.PROJECT_SETUP));
 ```
 
 ### ❌ Never Use Hardcoded Paths
@@ -110,7 +110,7 @@ export function SetupOverviewPage() {
         <Card>
           <CardHeader>
             <CardTitle>
-              <Link to={route("buildTool")}>Build Tool</Link>
+              <Link to={route(ROUTE_NAMES.BUILD_TOOL)}>Build Tool</Link>
             </CardTitle>
           </CardHeader>
         </Card>
@@ -162,7 +162,7 @@ export const route = (name: RouteName): string => {
 
 ```typescript
 // ✅ Good - TypeScript prevents invalid routes
-const validRoute = route("buildTool");    // ✅ Compiles
+const validRoute = route(ROUTE_NAMES.BUILD_TOOL);    // ✅ Compiles
 const invalidRoute = route("nonExistent"); // ❌ Compilation error
 ```
 
@@ -186,7 +186,7 @@ const routes = [
 
 ```typescript
 // ✅ Good - Memoize expensive route calculations
-const memoizedRoute = useMemo(() => route("complexRoute"), []);
+const memoizedRoute = useMemo(() => route(ROUTE_NAMES.COMPLEX_ROUTE), []);
 ```
 
 ## Testing Strategy
@@ -197,13 +197,13 @@ const memoizedRoute = useMemo(() => route("complexRoute"), []);
 // ✅ Good - Test route resolution
 describe("route function", () => {
   it("should resolve parent routes", () => {
-    expect(route("home")).toBe("/");
-    expect(route("projectSetup")).toBe("/setup");
+    expect(route(ROUTE_NAMES.HOME)).toBe("/");
+    expect(route(ROUTE_NAMES.PROJECT_SETUP)).toBe("/setup");
   });
 
   it("should resolve child routes", () => {
-    expect(route("buildTool")).toBe("/setup/build-tool");
-    expect(route("codeQuality")).toBe("/setup/code-quality");
+    expect(route(ROUTE_NAMES.BUILD_TOOL)).toBe("/setup/build-tool");
+    expect(route(ROUTE_NAMES.CODE_QUALITY)).toBe("/setup/code-quality");
   });
 });
 ```
@@ -299,7 +299,7 @@ const validateRoute = (name: string): name is RouteName => {
 const getAccessibleRoute = (routeName: RouteName, user: User): string => {
   const route = findRoute(routes, routeName);
   if (!route || !hasPermission(user, route)) {
-    return route("accessDenied");
+    return route(ROUTE_NAMES.ACCESS_DENIED);
   }
   return route.path;
 };
@@ -347,7 +347,7 @@ export const route = (name: RouteName | keyof typeof deprecatedRoutes): string =
 ```typescript
 // Bad - Mixing named routes with hardcoded paths
 <Link to="/setup">Setup</Link>          // ❌ Hardcoded
-<Link to={route("buildTool")}>Tool</Link> // ✅ Named route
+<Link to={route(ROUTE_NAMES.BUILD_TOOL)}>Tool</Link> // ✅ Named route
 ```
 
 ### ❌ Deep Route Nesting

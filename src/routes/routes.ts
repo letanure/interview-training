@@ -29,52 +29,72 @@ export interface NavigationSection {
 	subitems: RouteConfig[];
 }
 
+// Route names - single source of truth
+export const ROUTE_NAMES = {
+	HOME: "home",
+	PROJECT_SETUP: "projectSetup",
+	BUILD_TOOL: "buildTool",
+	CODE_QUALITY: "codeQuality",
+	TESTING: "testing",
+	GIT_HOOKS: "gitHooks",
+	BUNDLE_SIZE: "bundleSize",
+	DEV_ENV: "devEnv",
+	CSS_OVERVIEW: "cssOverview",
+	CSS_MODULES: "cssModules",
+	TAILWIND: "tailwind",
+	SHADCN: "shadcn",
+	VANILLA_EXTRACT: "vanillaExtract",
+} as const;
+
+// Extract route names for type
+const routeNames = Object.values(ROUTE_NAMES);
+
 // Nested route configuration with named routes
 export const routes: RouteConfig[] = [
 	{
-		name: "home",
+		name: ROUTE_NAMES.HOME,
 		path: "/",
 		component: HomePage,
 		title: "Home",
 	},
 	{
-		name: "projectSetup",
+		name: ROUTE_NAMES.PROJECT_SETUP,
 		path: "/setup",
 		component: SetupOverviewPage,
 		title: "Project Setup",
 		children: [
 			{
-				name: "buildTool",
+				name: ROUTE_NAMES.BUILD_TOOL,
 				path: "build-tool",
 				component: BuildToolPage,
 				title: "Build Tool",
 			},
 			{
-				name: "codeQuality",
+				name: ROUTE_NAMES.CODE_QUALITY,
 				path: "code-quality",
 				component: CodeQualityPage,
 				title: "Code Quality",
 			},
 			{
-				name: "gitHooks",
-				path: "git-hooks",
-				component: GitHooksPage,
-				title: "Git Hooks",
-			},
-			{
-				name: "testing",
+				name: ROUTE_NAMES.TESTING,
 				path: "testing",
 				component: TestingPage,
 				title: "Testing",
 			},
 			{
-				name: "bundleSize",
+				name: ROUTE_NAMES.GIT_HOOKS,
+				path: "git-hooks",
+				component: GitHooksPage,
+				title: "Git Hooks",
+			},
+			{
+				name: ROUTE_NAMES.BUNDLE_SIZE,
 				path: "bundle-size",
 				component: BundleSizePage,
 				title: "Bundle Size",
 			},
 			{
-				name: "devEnv",
+				name: ROUTE_NAMES.DEV_ENV,
 				path: "dev-env",
 				component: DevEnvPage,
 				title: "Development Environment",
@@ -82,31 +102,31 @@ export const routes: RouteConfig[] = [
 		],
 	},
 	{
-		name: "cssStyling",
+		name: ROUTE_NAMES.CSS_OVERVIEW,
 		path: "/css",
 		component: CssOverviewPage,
 		title: "CSS Styling",
 		children: [
 			{
-				name: "cssModules",
+				name: ROUTE_NAMES.CSS_MODULES,
 				path: "modules",
 				component: ModulesPage,
 				title: "CSS Modules",
 			},
 			{
-				name: "vanillaExtract",
+				name: ROUTE_NAMES.VANILLA_EXTRACT,
 				path: "vanilla-extract",
 				component: VanillaExtractPage,
 				title: "Vanilla Extract",
 			},
 			{
-				name: "tailwind",
+				name: ROUTE_NAMES.TAILWIND,
 				path: "tailwind",
 				component: TailwindPage,
 				title: "Tailwind CSS",
 			},
 			{
-				name: "shadcn",
+				name: ROUTE_NAMES.SHADCN,
 				path: "shadcn",
 				component: ShadcnPage,
 				title: "shadcn/ui",
@@ -147,19 +167,8 @@ export const flatRoutes: RouteConfig[] = routes.reduce<RouteConfig[]>(
 	[],
 );
 
-// Helper type to extract all route names from the routes array
-type ExtractRouteNames<T extends readonly RouteConfig[]> = {
-	[K in keyof T]: T[K] extends { name: infer N; children?: infer C }
-		? N extends string
-			? C extends readonly RouteConfig[]
-				? N | ExtractRouteNames<C>
-				: N
-			: never
-		: never;
-}[number];
-
-// Type for all available route names (generated from routes)
-type RouteName = ExtractRouteNames<typeof routes>;
+// Type for all available route names (generated from ROUTE_NAMES constant)
+type RouteName = (typeof routeNames)[number];
 
 // Named route resolver - Vue Router inspired
 export const route = (name: RouteName): string => {

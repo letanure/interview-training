@@ -12,10 +12,10 @@ This guide covers the step-by-step implementation of our React Router v6 system 
 - `src/components/AppSidebar/AppSidebar.tsx` - Updated to use route configuration
 - `src/components/Layout/Header.tsx` - Updated to use named routes for breadcrumbs
 
-### Page Components Updated
-- `src/pages/setup/SetupOverviewPage.tsx` - Uses named routes instead of hardcoded paths
-- `src/pages/css/CssOverviewPage.tsx` - Uses named routes instead of hardcoded paths
-- All 13 page components now use shadcn/ui Card components
+### Page Components
+- `src/pages/setup/SetupOverviewPage.tsx` - Uses named routes for navigation
+- `src/pages/css/CssOverviewPage.tsx` - Uses named routes for navigation  
+- All 13 page components use shadcn/ui Card components
 
 ## Installation
 
@@ -59,8 +59,8 @@ Function that takes a route name and returns the full path. Recursively searches
 
 ### 3. Component Integration
 
-**Updated components use:**
-All page components (SetupOverviewPage, CssOverviewPage) now use `route("routeName")` instead of hardcoded paths like `"/setup/build-tool"`.
+**Component usage:**
+All page components (SetupOverviewPage, CssOverviewPage) use `route(ROUTE_NAMES.ROUTE_NAME)` instead of hardcoded paths like `"/setup/build-tool"`.
 
 **Why this matters:**
 - Change URL once, works everywhere
@@ -77,7 +77,7 @@ All page components (SetupOverviewPage, CssOverviewPage) now use `route("routeNa
 - Integrates with React Router Link components
 
 **Header Breadcrumbs:**
-- Uses `route("home")` instead of hardcoded "/"
+- Uses `route(ROUTE_NAMES.HOME)` for home navigation
 - Supports custom breadcrumb configuration
 - Integrates with React Router navigation
 

@@ -1,7 +1,7 @@
 import "./index.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import RootLayout from "@/app/layout";
+import RootLayout from "@/components/Layout/RootLayout";
 import { flatRoutes } from "@/routes/routes";
 
 export default function App() {

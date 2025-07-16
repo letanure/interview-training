@@ -48,8 +48,8 @@ Instead of hardcoding paths, components use semantic names:
 <Link to="/css/tailwind">Tailwind</Link>
 
 // After: Named routes with type safety
-<Link to={route("buildTool")}>Build Tool</Link>
-<Link to={route("tailwind")}>Tailwind</Link>
+<Link to={route(ROUTE_NAMES.BUILD_TOOL)}>Build Tool</Link>
+<Link to={route(ROUTE_NAMES.TAILWIND)}>Tailwind</Link>
 ```
 
 **Type Safety:**
@@ -69,7 +69,7 @@ export const route = (name: RouteName): string => { ... }
 ```typescript
 // Uses named route instead of hardcoded "/"
 const defaultBreadcrumbs = [
-  { label: "React Training", href: route("home") },
+  { label: "React Training", href: route(ROUTE_NAMES.HOME) },
   { label: title }
 ];
 ```
@@ -77,16 +77,16 @@ const defaultBreadcrumbs = [
 *Page Components:*
 ```typescript
 // SetupOverviewPage.tsx - All navigation uses named routes
-<Link to={route("buildTool")}>Build Tool</Link>
-<Link to={route("codeQuality")}>Code Quality</Link>
-<Link to={route("testing")}>Testing</Link>
+<Link to={route(ROUTE_NAMES.BUILD_TOOL)}>Build Tool</Link>
+<Link to={route(ROUTE_NAMES.CODE_QUALITY)}>Code Quality</Link>
+<Link to={route(ROUTE_NAMES.TESTING)}>Testing</Link>
 ```
 
 *Programmatic Navigation:*
 ```typescript
 // Navigation with type safety
 const navigate = useNavigate();
-navigate(route("buildTool"));  // Autocomplete works here
+navigate(route(ROUTE_NAMES.BUILD_TOOL));  // Autocomplete works here
 ```
 
 ### Key Features
@@ -222,8 +222,8 @@ We implemented a Vue Router-inspired named routes system with TypeScript safety:
 
 ```typescript
 // Components use semantic names instead of hardcoded paths
-<Link to={route("buildTool")}>Build Tool</Link>
-<Link to={route("codeQuality")}>Code Quality</Link>
+<Link to={route(ROUTE_NAMES.BUILD_TOOL)}>Build Tool</Link>
+<Link to={route(ROUTE_NAMES.CODE_QUALITY)}>Code Quality</Link>
 // Change URL once in routes config, works everywhere
 ```
 
@@ -232,10 +232,10 @@ We implemented a Vue Router-inspired named routes system with TypeScript safety:
 *CssOverviewPage.tsx:*
 ```typescript
 // All links use named routes instead of hardcoded paths
-<Link to={route("cssModules")}>CSS Modules</Link>
-<Link to={route("vanillaExtract")}>Vanilla Extract</Link>
-<Link to={route("tailwind")}>Tailwind CSS</Link>
-<Link to={route("shadcn")}>shadcn/ui</Link>
+<Link to={route(ROUTE_NAMES.CSS_MODULES)}>CSS Modules</Link>
+<Link to={route(ROUTE_NAMES.VANILLA_EXTRACT)}>Vanilla Extract</Link>
+<Link to={route(ROUTE_NAMES.TAILWIND)}>Tailwind CSS</Link>
+<Link to={route(ROUTE_NAMES.SHADCN)}>shadcn/ui</Link>
 ```
 
 *AppSidebar.tsx:*
@@ -249,7 +249,7 @@ We implemented a Vue Router-inspired named routes system with TypeScript safety:
 ```
 
 **Benefits of This Approach:**
-- ✅ **Type safety**: `route("buildTool")` has autocomplete and compile-time validation
+- ✅ **Type safety**: `route(ROUTE_NAMES.BUILD_TOOL)` has autocomplete and compile-time validation
 - ✅ **Refactoring safety**: Change `/setup` to `/project-setup` once, updates everywhere
 - ✅ **Developer experience**: IDE autocomplete shows all available routes
 - ✅ **Maintainability**: Single source of truth for all navigation

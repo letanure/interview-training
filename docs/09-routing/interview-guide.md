@@ -57,8 +57,8 @@ This guide provides talking points and technical explanations for discussing our
 <Link to="/setup/code-quality">Code Quality</Link>
 
 // After: Named routes
-<Link to={route("buildTool")}>Build Tool</Link>
-<Link to={route("codeQuality")}>Code Quality</Link>
+<Link to={route(ROUTE_NAMES.BUILD_TOOL)}>Build Tool</Link>
+<Link to={route(ROUTE_NAMES.CODE_QUALITY)}>Code Quality</Link>
 ```
 
 **Benefits:**
@@ -137,7 +137,7 @@ const routes = [
 ### Q: "Explain your named routes system"
 
 **Answer:**
-"Our named routes system is inspired by Vue Router. Instead of hardcoding paths like `/setup/build-tool` throughout components, we use a `route()` function with semantic names like `route('buildTool')`. This provides:
+"Our named routes system is inspired by Vue Router. Instead of hardcoding paths like `/setup/build-tool` throughout components, we use a `route()` function with semantic names like `route(ROUTE_NAMES.BUILD_TOOL)`. This provides:
 
 1. **Type safety**: TypeScript prevents invalid route names
 2. **Refactoring safety**: Change URLs once, automatically updates everywhere
@@ -224,7 +224,7 @@ const routes = [
 ];
 
 // Type-safe parameter handling
-route('userProfile', { id: '123' })
+route(ROUTE_NAMES.USER_PROFILE, { id: '123' })
 ```
 
 The architecture supports this extension while maintaining type safety."
@@ -280,12 +280,12 @@ export const route = (name: RouteName): string => {
 ```typescript
 describe('route function', () => {
   it('should resolve parent routes', () => {
-    expect(route('home')).toBe('/');
-    expect(route('projectSetup')).toBe('/setup');
+    expect(route(ROUTE_NAMES.HOME)).toBe('/');
+    expect(route(ROUTE_NAMES.PROJECT_SETUP)).toBe('/setup');
   });
 
   it('should resolve child routes', () => {
-    expect(route('buildTool')).toBe('/setup/build-tool');
+    expect(route(ROUTE_NAMES.BUILD_TOOL)).toBe('/setup/build-tool');
   });
 });
 ```

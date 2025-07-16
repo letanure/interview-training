@@ -5,7 +5,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { route } from "@/routes/routes";
+import { ROUTE_NAMES, route } from "@/routes/routes";
 
 export function SetupOverviewPage() {
 	return (
@@ -19,7 +19,10 @@ export function SetupOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("buildTool")} className="hover:underline">
+							<Link
+								to={route(ROUTE_NAMES.BUILD_TOOL)}
+								className="hover:underline"
+							>
 								Build Tool
 							</Link>
 						</CardTitle>
@@ -32,7 +35,10 @@ export function SetupOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("codeQuality")} className="hover:underline">
+							<Link
+								to={route(ROUTE_NAMES.CODE_QUALITY)}
+								className="hover:underline"
+							>
 								Code Quality
 							</Link>
 						</CardTitle>
@@ -45,7 +51,10 @@ export function SetupOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("gitHooks")} className="hover:underline">
+							<Link
+								to={route(ROUTE_NAMES.GIT_HOOKS)}
+								className="hover:underline"
+							>
 								Git Hooks
 							</Link>
 						</CardTitle>
@@ -58,7 +67,7 @@ export function SetupOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("testing")} className="hover:underline">
+							<Link to={route(ROUTE_NAMES.TESTING)} className="hover:underline">
 								Testing
 							</Link>
 						</CardTitle>
@@ -71,7 +80,10 @@ export function SetupOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("bundleSize")} className="hover:underline">
+							<Link
+								to={route(ROUTE_NAMES.BUNDLE_SIZE)}
+								className="hover:underline"
+							>
 								Bundle Size
 							</Link>
 						</CardTitle>
@@ -84,7 +96,7 @@ export function SetupOverviewPage() {
 				<Card className="hover:bg-muted/50 transition-colors">
 					<CardHeader>
 						<CardTitle>
-							<Link to={route("devEnv")} className="hover:underline">
+							<Link to={route(ROUTE_NAMES.DEV_ENV)} className="hover:underline">
 								Development Environment
 							</Link>
 						</CardTitle>

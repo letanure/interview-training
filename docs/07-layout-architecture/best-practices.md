@@ -10,10 +10,9 @@ This guide covers how to implement and work with layouts in our React Training p
 
 ```
 src/
-├── app/
-│   └── layout.tsx          # Root application layout
 ├── components/
 │   └── Layout/
+│       ├── RootLayout.tsx  # Root application layout
 │       ├── Header.tsx      # Header with breadcrumbs
 │       └── Footer.tsx      # Footer (future)
 ├── pages/
@@ -33,7 +32,7 @@ App.tsx
 
 ## Implementation Guidelines
 
-### 1. Root Layout (`app/layout.tsx`)
+### 1. Root Layout (`components/Layout/RootLayout.tsx`)
 
 **Purpose**: Application shell that wraps all pages
 
@@ -48,7 +47,7 @@ App.tsx
 **Example**:
 
 ```typescript
-// app/layout.tsx
+// components/Layout/RootLayout.tsx
 export default function RootLayout({
   children,
 }: {

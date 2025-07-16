@@ -14,7 +14,7 @@ React applications need a consistent pattern for handling layouts that:
 ## Decision
 We will use a **Next.js-inspired layout pattern** with the following structure:
 
-1. **Root layout** lives in `src/app/layout.tsx`
+1. **Root layout** lives in `src/components/Layout/RootLayout.tsx`
 2. **Layout components** (Header, Footer, etc.) live in `src/components/Layout/`
 3. **Page components** live in `src/pages/`
 4. **Layouts use children pattern** for composition
@@ -22,10 +22,9 @@ We will use a **Next.js-inspired layout pattern** with the following structure:
 ### File Structure
 ```
 src/
-├── app/
-│   └── layout.tsx          # Root application layout
 ├── components/
 │   └── Layout/
+│       ├── RootLayout.tsx  # Root application layout
 │       └── Header.tsx      # Reusable layout components
 └── pages/
     └── HomePage.tsx        # Pure page content
@@ -33,7 +32,7 @@ src/
 
 ### Implementation Pattern
 ```typescript
-// app/layout.tsx
+// components/Layout/RootLayout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
@@ -50,7 +49,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 export default function App() {
   return (
     <RootLayout>
-      <HomePage />
+      <Routes>
+        {/* React Router routes */}
+      </Routes>
     </RootLayout>
   );
 }
@@ -128,7 +129,7 @@ function App() {
 ## Implementation Details
 
 ### Layout Hierarchy
-1. **Root Layout** (`app/layout.tsx`): Application shell
+1. **Root Layout** (`components/Layout/RootLayout.tsx`): Application shell
 2. **Section Layouts** (future): Dashboard, Auth, etc.
 3. **Page Content**: Pure content components
 

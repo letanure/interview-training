@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { route } from "@/routes/routes";
+import { ROUTE_NAMES, route } from "@/routes/routes";
 
 interface HeaderProps {
 	title?: string;
@@ -22,7 +22,7 @@ interface HeaderProps {
 
 export function Header({ title = "Home", breadcrumbs }: HeaderProps) {
 	const defaultBreadcrumbs = [
-		{ label: "React Training", href: route("home") },
+		{ label: "React Training", href: route(ROUTE_NAMES.HOME) },
 		{ label: title },
 	];
 
