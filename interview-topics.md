@@ -1,37 +1,36 @@
-# React/Frontend Interview Topics - TODO List
+# React/Frontend Interview Topics - Master List
 
-## 1. React Project Foundations
+## Phase 1: Foundation (Current Focus) 🎯
 
-## Project Setup Essentials
+### ✅ Completed
 
-- [x] **CSS/Styling Solution** - CSS Modules, Tailwind, Vanilla Extract, shadcn/ui (multiple implementations)
-- [ ] **State Management Setup** - Context API, Zustand, or Redux Toolkit
-- [ ] **Routing Setup** - React Router or TanStack Router
-- [ ] **Environment Variables** - .env files and type-safe env handling
-- [ ] **Error Boundaries** - implementation and error handling strategy
-- [ ] **Performance Monitoring** - Core Web Vitals tracking and optimization
-- [ ] **CI/CD Pipeline** - GitHub Actions or similar automation
-- [ ] **Code Generators** - templates and scaffolding for components, hooks, pages, and tests
+- [x] **Creating a React app in 2025** - Vite, TypeScript, modern tooling
+- [x] **Code Quality & Formatting** - Biome setup and configuration
+- [x] **Development Workflow** - Git hooks, conventional commits
+- [x] **Testing Infrastructure** - Vitest + RTL, Playwright E2E
+- [x] **Docker Setup** - Optional containerized development
+- [x] **Dead Code Detection** - Knip configuration
+- [x] **Bundle Size Budgets** - CI monitoring with PR reporting
+- [x] **NPM Scripts Convention** - category:action pattern
+- [x] **CSS/Styling Solutions** - CSS Modules, Vanilla Extract, Tailwind, shadcn/ui
 
-## Pending Technical Tasks
+### 🚧 Next Up (Priority Order)
 
-- [x] **shadcn/ui Implementation** - Complete CSS styling solution examples
-- [ ] **Markdown Link Linter** - Tool to check internal links in documentation
-- [ ] **Documentation Generator** - Script to keep folder descriptions and indexes up to date
-- [ ] **Interview Guide Expansion** - Add guides for remaining implemented topics
+- [x] **Routing** - React Router vs TanStack Router implementation
+- [x] **Files** - how to organize file
+- [x] **Alias** - how to organize alias
+- [ ] **lazy load** - and other react performance?
+- [ ] **State Management** - Context API, Zustand, Redux Toolkit comparison
+- [ ] **Environment Variables** - Type-safe env handling with Vite
+- [ ] **Error Boundaries** - Error handling strategies and fallback UIs
 
-## Current Status
+### 📋 Foundation Backlog
 
-- ✅ **Creating a React app in 2025** - document setup process, options, and decisions
-- ✅ **Code Quality & Formatting** - ESLint vs Prettier vs Biome analysis and decision
-- ✅ **Development Workflow** - pre-commit hooks, conventional commits, CI/CD
-- ✅ **Testing Infrastructure** - unit testing (Vitest + React Testing Library), E2E (Playwright)
-- ✅ **Optional Docker Setup** - containerized development environment
-- ✅ **Dead Code Detection** - Knip for unused exports, dependencies, and files
-- ✅ **Bundle Size Budgets** - automated monitoring with CI enforcement and PR reporting
-- ✅ **NPM Scripts Naming Convention** - consistent category:action pattern for all scripts
+- [ ] **Performance Monitoring** - Core Web Vitals tracking
+- [ ] **CI/CD Pipeline** - GitHub Actions automation
+- [ ] **Code Generators** - Component/hook scaffolding
 
-## 2. React Basics
+## Phase 2: Core React Patterns
 
 ### React Core Concepts
 
@@ -64,7 +63,7 @@
 
 - [ ] **Error Boundaries** - componentDidCatch, error handling in React
 
-## 3. Real-World React
+## Phase 3: Production React
 
 ### React Router
 
@@ -105,7 +104,7 @@
 - [ ] Optimistic UI and background revalidation
 - [ ] Retry strategies and error recovery
 
-## 4. Advanced React & Architecture
+## Phase 4: Advanced Architecture
 
 ### React 18 & Concurrent Features
 
@@ -172,7 +171,7 @@
 - [ ] Using LLM APIs in React — prompt input, request handling
 - [ ] AI results and app state — safe UI updates and fallback logic
 
-## 5. Ecosystem & Practice
+## Phase 5: Ecosystem & Tools
 
 - [ ] **CSS-in-JS vs CSS Modules vs Styled Components** - pros/cons, best practices
 - [ ] Animation Techniques — Framer Motion, CSS transitions
@@ -284,14 +283,18 @@
 
 _This list tracks all React/Frontend interview topics to be covered in this training project._
 
-## 9. Optional Extras & Deep Dives
+## Technical Debt & Tooling
 
-- [ ] Microfrontends — pros, cons, module federation
-- [ ] Edge functions vs API routes — use cases and performance
-- [ ] Offline support and update flow
-- [ ] Accessibility automation in CI
-- [ ] Contract Validation — using zod, tRPC, or openapi-typescript
-- [ ] Platform thinking — reusability across apps and teams
-- [ ] Interview-style algorithm tasks — small coding challenges in JS
-- [ ] Human-in-the-loop workflows — reviewing AI-generated code, version control strategies
-- [ ] Prompt engineering for devs — guiding LLMs to build components, tests, and docs
+### 🔧 Project Maintenance
+
+- [ ] **TypeScript Path Aliases ADR** - Document @ import decision
+- [ ] **Markdown Link Linter** - Check internal documentation links
+- [ ] **Documentation Generator** - Auto-sync folder descriptions
+- [ ] **Interview Guide Updates** - Expand for new implementations
+
+### 🎯 Implementation Notes
+
+- Focus on Phase 1 before moving to Phase 2
+- Each topic should include: Implementation, Documentation, Interview Guide
+- Prioritize high-value interview topics
+- Keep technical debt manageable

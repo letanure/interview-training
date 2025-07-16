@@ -120,9 +120,10 @@ module.exports = {
 
 ### Phase 3: Advanced Optimization
 1. **Component-level splitting** for heavy components
-2. **Prefetching strategies** based on user behavior
-3. **Service worker caching** for repeat visits
-4. **Bundle analysis automation**
+2. **Chunk grouping strategies** for optimal bundle composition
+3. **Prefetching strategies** based on user behavior
+4. **Service worker caching** for repeat visits
+5. **Bundle analysis automation**
 
 ## Performance Targets
 
@@ -254,6 +255,66 @@ const CodeQualityPage = lazy(() => import("@pages/setup/CodeQualityPage"));
   </Routes>
 </Suspense>
 ```
+
+## Chunk Grouping Strategies
+
+### Option 1: Individual Page Chunks
+Creates separate chunks for each page:
+```bash
+# Bundle analysis output
+dist/assets/BuildToolPage-BZW0KDSS.js        2.17 kB
+dist/assets/CodeQualityPage-D0TgvDEg.js      1.02 kB
+dist/assets/TestingPage-BIwnhLFS.js          1.01 kB
+# ... 27 total chunks (1-3KB each)
+```
+
+**Benefits:**
+- **Granular loading**: Only load exact page needed
+- **Simple implementation**: One chunk per page
+- **Easy to debug**: Clear chunk-to-page mapping
+
+**Drawbacks:**
+- **Too many HTTP requests**: 27+ separate chunks
+- **Poor compression**: Small chunks don't compress well
+- **Overhead**: HTTP request overhead exceeds chunk size
+- **Blind lazy loading**: No intelligence about user navigation patterns
+
+### Option 2: Feature-based Grouping
+Groups related pages into logical chunks:
+
+```typescript
+// Group by feature/section
+const architectureChunk = lazy(() => import("@chunks/architecture"));
+const workflowChunk = lazy(() => import("@chunks/workflow")); 
+const frontendChunk = lazy(() => import("@chunks/frontend"));
+const performanceChunk = lazy(() => import("@chunks/performance"));
+const documentationChunk = lazy(() => import("@chunks/documentation"));
+```
+
+**Benefits:**
+- **Fewer HTTP requests**: 5-6 chunks instead of 27+
+- **Better compression**: Larger chunks compress more efficiently
+- **Logical grouping**: Related pages cached together
+- **Faster subsequent navigation**: Within-feature navigation is instant
+- **Smart bundling**: Groups pages based on user journey and usage patterns
+
+**Implementation Strategy:**
+```typescript
+// chunks/architecture.ts
+export { ArchitectureOverviewPage } from "@pages/architecture/ArchitectureOverviewPage";
+export { FileOrganizationPage } from "@pages/architecture/FileOrganizationPage";
+export { PathAliasesPage } from "@pages/architecture/PathAliasesPage";
+
+// Helper function for cleaner route definitions
+const loadArchitecture = (component: string) =>
+  lazy(() => import("@chunks/architecture").then(m => ({ default: m[component] })));
+```
+
+### Decision: Route-based Code Splitting with Individual Page Bundles
+**Chosen approach**: Individual page chunks (Option 1)
+**Alternative**: Feature-based grouping (Option 2)
+
+**Rationale:** Route-based code splitting with individual page bundles provides the simplest implementation with clear debugging capabilities and educational value for understanding lazy loading concepts.
 
 ## Related Documentation
 - [Bundle Size Budgets](../05-performance/adr.md)
