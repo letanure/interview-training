@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide covers how to implement and work with layouts in our React Training project, following our established Next.js-inspired architecture pattern.
+This guide covers how to implement and work with layouts in our Interview Prep project, following our established Next.js-inspired architecture pattern.
 
 ## Architecture Pattern
 

@@ -1,4 +1,4 @@
-# React/Frontend Interview Training
+# Interview Prep
 
 A comprehensive React and frontend interview preparation project with practical implementations, architectural decisions, and modern development practices.
 

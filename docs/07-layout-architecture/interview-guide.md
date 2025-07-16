@@ -79,7 +79,7 @@ interface HeaderProps {
 <Header 
   title="CSS Styling" 
   breadcrumbs={[
-    { label: "React Training", href: "#" },
+    { label: "Interview Prep", href: "#" },
     { label: "CSS Styling" }
   ]} 
 />

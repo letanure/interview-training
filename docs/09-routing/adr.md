@@ -69,7 +69,7 @@ export const route = (name: RouteName): string => { ... }
 ```typescript
 // Uses named route instead of hardcoded "/"
 const defaultBreadcrumbs = [
-  { label: "React Training", href: route(ROUTE_NAMES.HOME) },
+  { label: "Interview Prep", href: route(ROUTE_NAMES.HOME) },
   { label: title }
 ];
 ```

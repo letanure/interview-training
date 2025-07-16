@@ -1,4 +1,4 @@
-# Contributing to React/Frontend Interview Training
+# Contributing to Interview Prep
 
 This document provides guidelines for contributors to add new interview topics, documentation, and implementations to this training project.
 

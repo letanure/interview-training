@@ -439,12 +439,12 @@ export const buildBreadcrumbs = (
 	currentPath: string,
 ): Array<{ label: string; href?: string }> => {
 	const breadcrumbs: Array<{ label: string; href?: string }> = [
-		{ label: "Development Practices", href: "/" },
+		{ label: "Interview Prep", href: "/" },
 	];
 
 	// Handle home route
 	if (currentPath === "/") {
-		return [{ label: "Development Practices" }];
+		return [{ label: "Interview Prep" }];
 	}
 
 	// Find the matching route and its parents
