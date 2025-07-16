@@ -1,7 +1,12 @@
-import { ButtonShowcase } from "./examples/css-implementations/ButtonShowcase";
+import "./index.css";
 
-function App() {
-	return <ButtonShowcase />;
+import RootLayout from "@/app/layout";
+import { HomePage } from "@/pages/HomePage";
+
+export default function App() {
+	return (
+		<RootLayout>
+			<HomePage />
+		</RootLayout>
+	);
 }
-
-export default App;

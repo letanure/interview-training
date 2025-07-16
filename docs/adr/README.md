@@ -16,6 +16,8 @@ This directory contains Architecture Decision Records for the React/Frontend int
 | [008](008-bundle-size-budgets.md) | Bundle Size Budgets and Performance Monitoring | Accepted | 2025-01-14 | 500KB budget with CI enforcement |
 | [009](009-npm-scripts-naming-convention.md) | NPM Scripts Naming Convention | Accepted | 2025-01-15 | category:action pattern for consistent script naming |
 | [010](010-css-styling-solution.md) | CSS/Styling Solution | Accepted | 2025-01-15 | Multi-solution: Vanilla Extract + shadcn/ui + Tailwind v4 + CSS Modules |
+| [011](011-documentation-organization.md) | Documentation Organization Strategy | Accepted | 2025-01-15 | 4-tier system: ADR, Journey, Best Practices, Interview Guide |
+| [012](012-layout-architecture-pattern.md) | Layout Architecture Pattern | Accepted | 2025-01-16 | Next.js-inspired layout pattern with children composition |
 
 ## ADR Format
 
