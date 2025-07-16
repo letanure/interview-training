@@ -41,7 +41,31 @@ docs/
 
 **Rationale**: Each architectural decision generates related documentation across all 4 types. Topic-based folders keep related documents together while maintaining clear document type boundaries.
 
-**Implementation Details:** See `docs/implementation/2k-documentation-organization.md`
+### Documentation Content Guidelines
+
+**Implementation Documents:**
+- Describe the process and whys, don't copy-paste code
+- Users can check actual files for current implementation
+- Focus on what was created, why it was created, where it lives
+- Avoid large code blocks that can become outdated
+
+**ADR Documents:**
+- Focus on examples and decisions rather than full implementations
+- Show simple examples from actual components
+- Avoid copying complex code that can become stale
+- Explain the decision-making process and trade-offs
+
+**Best Practices Documents:**
+- Describe patterns and approaches, not full code examples
+- Use brief code snippets only when necessary for clarity
+- Focus on dos and don'ts with explanations
+- Point to actual files for complete implementations
+
+**Interview Guide Documents:**
+- Focus on talking points and concepts
+- Use simple examples to illustrate key ideas
+- Avoid complex code blocks that distract from discussion
+- Emphasize understanding over implementation details
 
 ## Alternatives Considered
 

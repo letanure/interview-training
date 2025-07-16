@@ -5,9 +5,9 @@
 ### 1. "How would you set up a new React project in 2025?"
 
 **Answer:**
-> "I'd use Vite with the React TypeScript template. Create React App is deprecated and no longer maintained. Vite offers superior performance, better development experience, and is the recommended approach by the React team. I'd run `npm create vite@latest . --template react-ts-swc` for the fastest setup with TypeScript and SWC compilation."
+> "The modern approach is Vite with the React TypeScript template. Create React App is deprecated and no longer maintained. Vite offers superior performance, better development experience, and is the recommended approach by the React team. The command `npm create vite@latest . --template react-ts-swc` provides the fastest setup with TypeScript and SWC compilation."
 
-**Code Example:**
+**Command Examples:**
 ```bash
 # Modern approach (2025)
 npm create vite@latest my-app --template react-ts-swc
@@ -31,25 +31,7 @@ npx create-react-app my-app --template typescript  # Don't use this
 **Answer:**
 > "Vite is the clear winner for modern React development. It uses native ES modules for development with instant hot reload, and Rollup for optimized production builds. The development server starts in milliseconds versus seconds with Webpack-based tools. It also has excellent TypeScript support out of the box."
 
-**Code Example:**
-```typescript
-// vite.config.ts - Simple but powerful
-import react from '@vitejs/plugin-react-swc'
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  plugins: [react()],
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom']
-        }
-      }
-    }
-  }
-})
-```
+**Example**: Vite configuration is minimal - just `plugins: [react()]` with optional build optimizations for vendor chunking.
 
 **Follow-up Question:** "How does this compare to Webpack?"
 
